@@ -1,5 +1,5 @@
 {
-    "name": "{{projectName}",
+    "name": "expo-template-amela-test",
     "main": "expo-router/entry",
     "version": "1.0.0",
     "scripts": {
@@ -101,6 +101,5 @@
         "react-test-renderer": "18.3.1",
         "tailwindcss": "^3.4.16",
         "typescript": "^5.3.3"
-    },
-    "private": true
+    }
 }
