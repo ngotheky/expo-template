@@ -1,5 +1,0 @@
-{
-    "name": "my-template",
-    "templateDir": "./template",
-    "postInitScript": "./post-init.js"
-}
