@@ -1,0 +1,69 @@
+{
+    "cli": {
+        "version": ">= 14.1.0",
+        "appVersionSource": "remote"
+    },
+    "build": {
+        "development": {
+            "environment": "development",
+            "developmentClient": true,
+            "distribution": "internal",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        "development-local": {
+            "environment": "development",
+            "developmentClient": true,
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "ios": {
+                "credentialsSource": "local",
+                "image": "latest"
+            }
+        },
+        "preview": {
+            "environment": "preview",
+            "distribution": "internal",
+            "channel": "preview",
+            "android": {
+                "buildType": "apk"
+            },
+            "ios": {
+                "simulator": false
+            },
+            "env": {
+                "NODE_ENV": "staging"
+            }
+        },
+        "production": {
+            "environment": "production",
+            "channel": "production",
+            "autoIncrement": true,
+            "env": {
+                "NODE_ENV": "production"
+            },
+            "android": {
+                "buildType": "app-bundle",
+                "credentialsSource": "local"
+            },
+            "ios": {
+                "simulator": false
+            }
+        }
+    },
+    "submit": {
+        "production": {
+            "android": {
+                "serviceAccountKeyPath": "./play-store.json",
+                "track": "internal"
+            },
+            "ios": {
+                "appleId": "info@amela.vn",
+                "ascAppId": "6739386927",
+                "appleTeamId": "A934T35MUC"
+            }
+        }
+    }
+}
