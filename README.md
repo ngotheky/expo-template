@@ -103,4 +103,32 @@ Tạo 3 app trên [Expo Dev](https://expo.dev), mỗi môi trường (developmen
 
 2. Chạy script `build-and-submit-ios-prod` để submit app lên Testflight.
 
+## 5. Config EAS (Option)
+
+-   Các script build đã được viết sẵn và config trong `eas.json`.
+-   Có thể chỉnh sửa hoặc thêm mới các lệnh build theo doc sau: ([Common properties for native platforms](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com))
+-   Có thể generate `ios` và `android` folder và build với `Xcode` bằng command sau
+
+```bash
+npx expo prebuild
+```
+
+-   Có thể build android dưới local mà không cần generate folder android, bằng script `build-android-dev-local`. Sau khi build sẽ tạo ra file build trong project mà không upload lên expo
+
+**Lưu ý:**
+
+-   Hiện tại cả ios và android đều build trên server của expo nên sẽ lâu hơn bình thường
+-   Dung lượng build khi build trên server của expo cũng sẽ lớn hơn so với build local
+
+## 6. Configure with app config (`app.config.ts`)
+
+-   Có thể thêm/bớt quyền ở mục `permissions`
+-   Chỉnh sửa plugins, text xin quyền, splash screen, icon notification ở `plugins`
+    Tham khảo thêm tại ([app.json / app.config.js](https://docs.expo.dev/versions/latest/config/app/))
+
+## 7. Eas update (code push)
+
+-   Eas update hoạt động giống như code push của `appcenter`
+-   App sẽ nhận code mới theo channel được config trong `eas.json`
+
 ---

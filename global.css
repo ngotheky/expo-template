@@ -2,38 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-    --brand-color: #2B88D8;
-  }
-  
-  .light {
-    --main-text: black;
-    --main-bg: white;
-  }
-  
-  .dark {
-    --main-text: rgba(255, 255, 255, 0.8);
-    --main-bg: #1c1c1e;
-  }
-  
-
-    body {
-      background-color: #f8fafc;
-      color: var(--main-text);
-      background-repeat: no-repeat;
-      font-size: 14px;
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      word-wrap: break-word;
-    }
-  
-    .dark body {
-      background-color: #000000;
-      color: var(--main-text);
-      background-repeat: no-repeat;
-    }
-  
-
-  

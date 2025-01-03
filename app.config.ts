@@ -95,6 +95,12 @@ module.exports = ({ config }: ConfigContext) => {
                     locationAlwaysAndWhenInUsePermission: 'Allow $(PRODUCT_NAME) to use your location.',
                 },
             ],
+            [
+                'expo-image-picker',
+                {
+                    photosPermission: 'The app accesses your photos to let you share them with your friends.',
+                },
+            ],
         ],
         experiments: {
             typedRoutes: true,

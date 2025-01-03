@@ -6,14 +6,15 @@
     "build": {
         "development": {
             "environment": "development",
+            "channel": "development",
             "developmentClient": true,
-            "distribution": "internal",
             "env": {
                 "NODE_ENV": "development"
             }
         },
         "development-local": {
             "environment": "development",
+            "channel": "development",
             "developmentClient": true,
             "env": {
                 "NODE_ENV": "development"
@@ -25,7 +26,6 @@
         },
         "preview": {
             "environment": "preview",
-            "distribution": "internal",
             "channel": "preview",
             "android": {
                 "buildType": "apk"
