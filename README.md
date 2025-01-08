@@ -40,6 +40,12 @@ Tạo 3 app trên [Expo Dev](https://expo.dev), mỗi môi trường (developmen
 
 ## 3. Config Build
 
+### Install EAS cli
+
+```bash
+npm install -g eas-cli
+```
+
 ### Cho iOS
 
 #### Build với Account Apple Developer

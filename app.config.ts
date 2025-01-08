@@ -5,7 +5,7 @@ import { ConfigContext } from '@expo/config';
 
 module.exports = ({ config }: ConfigContext) => {
     const buildProfile = process.env.NODE_ENV;
-    const dotenvFile = `.env.${buildProfile}`;
+    const dotenvFile = `.env.${buildProfile || 'development'}`;
     if (fs.existsSync(dotenvFile)) {
         dotenv.config({ path: dotenvFile });
     } else {
@@ -28,6 +28,15 @@ module.exports = ({ config }: ConfigContext) => {
             buildNumber: process.env.IOS_APP_BUILD_CODE,
             config: {
                 googleMapsApiKey: process.env.IOS_GOOGLE_API_KEY,
+            },
+            infoPlist: {
+                NSLocationWhenInUseUsageDescription: 'Allow $(PRODUCT_NAME) to use your location.',
+                NSLocationAlwaysUsageDescription: 'Allow $(PRODUCT_NAME) to use your location.',
+                NSLocationAlwaysAndWhenInUseUsageDescription: 'Allow $(PRODUCT_NAME) to use your location.',
+                NSPhotoLibraryUsageDescription: 'Allow $(PRODUCT_NAME) to access your photos.',
+                NSPhotoLibraryAddUsageDescription: 'Allow $(PRODUCT_NAME) to save photos.',
+                NSCameraUsageDescription: 'Allow $(PRODUCT_NAME) to access your camera.',
+                NSMicrophoneUsageDescription: 'Allow $(PRODUCT_NAME) to access your microphone.',
             },
         },
         android: {
@@ -99,6 +108,7 @@ module.exports = ({ config }: ConfigContext) => {
                 'expo-image-picker',
                 {
                     photosPermission: 'The app accesses your photos to let you share them with your friends.',
+                    cameraPermission: 'The app accesses your camera to let you take photos.',
                 },
             ],
         ],

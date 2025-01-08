@@ -19,6 +19,7 @@ export default {
         noData: 'データなし',
         cancel: 'キャンセル',
         confirm: '決定',
+        reload: 'リロード',
         sendOTP: {
             title: '認証コード',
             titleForgotPassword: 'パスワードを忘れた',
@@ -86,6 +87,13 @@ export default {
     alert: {
         success: '新規コードを送りました。',
         invalidOTP: '認証コードは正しくありません。',
+    },
+
+    permissions: {
+        camera: 'カメラの使用を許可してください。',
+        photo: '写真の使用を許可してください。',
+        audio: 'マイクの使用を許可してください。',
+        location: '位置情報の使用を許可してください。',
     },
 
     // error

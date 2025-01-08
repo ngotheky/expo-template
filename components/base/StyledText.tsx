@@ -23,19 +23,7 @@ interface StyledTextWithI18nValue extends StyledTextProps {
 
 type StyledTextCombineProps = StyledTextWithOriginValue | StyledTextWithI18nValue;
 
-/**
- * A styled text component that supports internationalization and dynamic theming.
- *
- * @param {StyledTextCombineProps} props - The properties for the StyledText component.
- * @param {string} [props.className] - Additional class names to apply to the text element.
- * @param {string} [props.originValue] - The original text value to display.
- * @param {string} [props.i18nText] - The key for the internationalized text.
- * @param {object} [props.i18nParams] - Parameters for the internationalized text.
- * @param {object} [props.rest] - Additional properties to pass to the Text component.
- *
- * @returns {JSX.Element} The rendered styled text component.
- */
-const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: StyledTextCombineProps) => {
+const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: StyledTextCombineProps, ref: any) => {
     const colorScheme = useColorScheme();
     const { t } = useTranslation();
 
@@ -51,6 +39,7 @@ const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: S
 
     return (
         <Text
+            ref={ref}
             {...rest}
             className={classNames(
                 {
@@ -64,5 +53,18 @@ const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: S
         </Text>
     );
 };
-
+/**
+ * A styled text component that supports internationalization and dynamic theming.
+ * @classdesc If change the text color, you need to add !text-[color] to className
+ *
+ * @param {StyledTextCombineProps} props - The properties for the StyledText component.
+ * @param {string} [props.className] - Additional class names to apply to the text element.
+ * @param {string} [props.originValue] - The original text value to display.
+ * @param {string} [props.i18nText] - The key for the internationalized text.
+ * @param {object} [props.i18nParams] - Parameters for the internationalized text.
+ * @param {object} [props.rest] - Additional properties to pass to the Text component.
+ *
+ * @returns {JSX.Element} The rendered styled text component.
+ *
+ */
 export default memo(StyledText, isEqual);
