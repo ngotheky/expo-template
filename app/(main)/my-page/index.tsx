@@ -1,6 +1,5 @@
 import StyledText from '@/components/base/StyledText';
 import useUserProfile from '@/store/useUserProfile';
-import React from 'react';
 import { View, Button } from 'react-native';
 
 export default function MyPage() {

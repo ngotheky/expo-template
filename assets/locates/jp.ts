@@ -42,6 +42,7 @@ export default {
             unknown: '不明なエラーが発生しました。',
             network: 'エラーが発生しました。暫くしてから、もう一度試してください。',
         },
+        selectDate: '日付を選択',
     },
 
     // screens

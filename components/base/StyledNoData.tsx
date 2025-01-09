@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import StyledText, { I18Type } from './StyledText';
 import StyledTouchable from './StyledTouchable';
@@ -24,7 +24,7 @@ const StyledNoData: FunctionComponent<StyledListNoDataProps> = ({
     className,
 }: StyledListNoDataProps) => {
     return (
-        <View className={classNames('items-center justify-center p-[8px]', className)}>
+        <View className={classNames('items-center justify-center p-2', className)}>
             {loading ? (
                 <View className="items-center">
                     <ActivityIndicator />
@@ -32,12 +32,12 @@ const StyledNoData: FunctionComponent<StyledListNoDataProps> = ({
             ) : (
                 <StyledText
                     i18nText={text || 'common.noData'}
-                    className={classNames('font-[600] text-[14px] color-primary text-center', clsText)}
+                    className={classNames('font-[600] text-[14px]  text-center', clsText)}
                 />
             )}
             {!!canRefresh && !loading ? (
                 <StyledTouchable onPress={onRefresh}>
-                    <StyledText i18nText={'common.reload'} className={classNames('m-[12px] text-primary', clsReload)} />
+                    <StyledText i18nText={'common.reload'} className={classNames('m-3 text-primary', clsReload)} />
                 </StyledTouchable>
             ) : (
                 <View />

@@ -1,5 +1,5 @@
 import { FlashList, FlashListProps } from '@shopify/flash-list';
-import React, { forwardRef, FunctionComponent, memo, useMemo } from 'react';
+import { forwardRef, FunctionComponent, memo, useMemo } from 'react';
 import { RefreshControl, View } from 'react-native';
 import { I18Type } from './StyledText';
 import isEqual from 'react-fast-compare';
@@ -42,7 +42,7 @@ const StyledList = (props: Props, ref: any) => {
     function renderFooter() {
         if (data?.length && loadingMore) {
             return (
-                <View className="my-[8px] items-center">
+                <View className="my-2 items-center">
                     <StyledIndicator size={24} />
                 </View>
             );

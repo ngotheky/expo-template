@@ -1,5 +1,5 @@
 import { Themes } from '@/assets/themes';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { ActivityIndicator, ActivityIndicatorProps } from 'react-native';
 
 const StyledIndicator: FunctionComponent<ActivityIndicatorProps> = (props: ActivityIndicatorProps) => {

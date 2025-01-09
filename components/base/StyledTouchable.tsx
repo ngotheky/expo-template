@@ -1,8 +1,8 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import { Pressable, PressableProps } from 'react-native';
 import { throttle } from 'lodash';
 
-interface StyledTouchableProps extends PressableProps {
+export interface StyledTouchableProps extends PressableProps {
     disabled?: boolean;
     onPress?(): void;
     onPressIn?(): void;

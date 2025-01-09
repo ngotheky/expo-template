@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Button } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import useUserProfile from '@/store/useUserProfile';

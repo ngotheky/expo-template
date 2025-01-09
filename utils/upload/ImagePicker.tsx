@@ -22,7 +22,7 @@ interface ImagePickerProp {
 const ImagePicker = ({ image, setImage, children, className, imageCls, pickerOptions, multiple }: ImagePickerProp) => {
     const { t } = useTranslation();
 
-    const actionSheet = useRef<any>(null);
+    const actionSheet = useRef<ActionSheet>(null);
     const [loading, setLoading] = useState(false);
 
     const options = [t('authen.register.cancel'), t('authen.register.photo'), t('authen.register.camera')];
@@ -69,4 +69,18 @@ const ImagePicker = ({ image, setImage, children, className, imageCls, pickerOpt
     );
 };
 
+/**
+ * ImagePicker component allows users to pick an image from their device's gallery or camera.
+ *
+ * @param {Object} props - The props for the ImagePicker component.
+ * @param {string} props.image - The current image URI.
+ * @param {Function} props.setImage - Function to set the selected image URI.
+ * @param {React.ReactNode} props.children - The children elements to be rendered inside the picker.
+ * @param {string} props.className - The class name for the touchable element.
+ * @param {string} props.imageCls - The class name for the image element.
+ * @param {Object} props.pickerOptions - Options for the image picker.
+ * @param {boolean} props.multiple - Flag to allow multiple image selection.
+ *
+ * @returns {JSX.Element} The ImagePicker component.
+ */
 export default memo(ImagePicker);
