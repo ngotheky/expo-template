@@ -10,18 +10,17 @@ import StyledInput from '@/components/base/StyledInput';
 import StyledDateTimePicker from '@/components/base/StyledDateTimePicker';
 import RadioButton from '@/components/base/RadioButton';
 import { MaterialIcons } from '@expo/vector-icons';
+import request from '@/api/request';
+import usePaging from '@/hooks/usePaging';
 
-const DATA = [
-    {
-        title: 'First Item',
-    },
-    {
-        title: 'Second Item',
-    },
-];
+const searchWorker = (params: any): Promise<any> => request.post(`common/worker`, params);
 
 export default function Home() {
     const [image, setImage] = useState('');
+    const { data, refetch, isRefetching, isFetchingNextPage, fetchNextPage } = usePaging<{ name: string }>({
+        requestPaging: searchWorker,
+        queryKey: 'common/worker',
+    });
 
     return (
         <View className="flex-1 justify-center items-center ">
@@ -40,8 +39,12 @@ export default function Home() {
             </ImagePicker>
             <View className="flex-1 w-full bg-gray-300">
                 <StyledList
-                    data={DATA}
-                    renderItem={({ item }) => <StyledText originValue={item.title} />}
+                    data={data}
+                    onRefresh={refetch}
+                    refreshing={isRefetching}
+                    onLoadMore={fetchNextPage}
+                    loadingMore={isFetchingNextPage}
+                    renderItem={({ item }) => <StyledText originValue={item.name} />}
                     estimatedItemSize={100}
                 />
             </View>
