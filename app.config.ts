@@ -122,6 +122,7 @@ module.exports = ({ config }: ConfigContext) => {
             eas: {
                 projectId: process.env.EXPO_PROJECT_ID,
             },
+            env: process.env,
         },
         owner: 'kyngodev',
         updates: {

@@ -1,5 +1,4 @@
 import { Tabs } from 'expo-router';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function MainLayout(): JSX.Element {
@@ -9,14 +8,14 @@ export default function MainLayout(): JSX.Element {
                 name="home/index"
                 options={{
                     title: 'Home',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+                    tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
                 }}
             />
             <Tabs.Screen
                 name="message/index"
                 options={{
                     title: 'Message',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="message.fill" color={color} />,
+                    tabBarIcon: ({ color }) => <MaterialIcons size={28} name="messenger" color={color} />,
                 }}
             />
 
@@ -38,7 +37,7 @@ export default function MainLayout(): JSX.Element {
                 name="my-page/index"
                 options={{
                     title: 'My Page',
-                    tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
+                    tabBarIcon: ({ color }) => <MaterialIcons size={28} name="person" color={color} />,
                 }}
             />
         </Tabs>

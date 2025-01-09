@@ -9,11 +9,11 @@ import useUserProfile from '@/store/useUserProfile';
 import { I18Type } from '@/components/base/StyledText';
 import Constants from 'expo-constants';
 
-const AUTH_URL_REFRESH_TOKEN = `${Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL}auth/refresh-token`;
+const AUTH_URL_REFRESH_TOKEN = `${Constants.expoConfig?.extra?.env?.EXPO_PUBLIC_API_URL}auth/refresh-token`;
 let hasAnyNetworkDialogShown = false;
 
 const request = axios.create({
-    baseURL: Constants.expoConfig?.extra?.EXPO_PUBLIC_API_URL,
+    baseURL: Constants.expoConfig?.extra?.env?.EXPO_PUBLIC_API_URL,
     timeout: 8000,
     headers: { Accept: '*/*' },
 });

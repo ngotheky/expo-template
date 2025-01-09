@@ -11,11 +11,33 @@ interface Props extends Omit<ReactNativeModalDateTimePickerProps, 'isVisible' | 
     onConfirm: (value: string | Date) => void;
     onCancel?: () => void;
 }
-
-const StyledDateTimePicker: FunctionComponent<Props> = (
-    { date, className, disabled, children, onCancel, formatter, onConfirm, ...res }: Props,
-    ref: any,
-) => {
+/**
+ * A styled date-time picker component that wraps around `DateTimePickerModal`.
+ * @example <StyledDateTimePicker mode="datetime" date={new Date()} onConfirm={value => console.log(value)}>
+                 <StyledText className="!text-primary" originValue="Select Date" />
+             </StyledDateTimePicker>
+ * @param {Props} props - The properties passed to the component.
+ * @param {Date} props.date - The currently selected date.
+ * @param {string} [props.className] - Additional class names for styling.
+ * @param {boolean} [props.disabled] - Whether the picker is disabled.
+ * @param {React.ReactNode} props.children - The child elements to be rendered inside the picker.
+ * @param {() => void} [props.onCancel] - Callback function to be called when the picker is cancelled.
+ * @param {(date: Date) => any} [props.formatter] - Optional formatter function to format the date before confirming.
+ * @param {(date: Date | any) => void} props.onConfirm - Callback function to be called when the date is confirmed.
+ * @param {any} ref - The ref to be forwarded to the component.
+ *
+ * @returns {JSX.Element} The rendered date-time picker component.
+ */
+const StyledDateTimePicker: FunctionComponent<Props> = ({
+    date,
+    className,
+    disabled,
+    children,
+    onCancel,
+    formatter,
+    onConfirm,
+    ...res
+}: Props) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const { t } = useTranslation();
     const closePicker = () => {
@@ -51,21 +73,5 @@ const StyledDateTimePicker: FunctionComponent<Props> = (
         </StyledTouchable>
     );
 };
-
-/**
- * A styled date-time picker component that wraps around `DateTimePickerModal`.
- *
- * @param {Props} props - The properties passed to the component.
- * @param {Date} props.date - The currently selected date.
- * @param {string} [props.className] - Additional class names for styling.
- * @param {boolean} [props.disabled] - Whether the picker is disabled.
- * @param {React.ReactNode} props.children - The child elements to be rendered inside the picker.
- * @param {() => void} [props.onCancel] - Callback function to be called when the picker is cancelled.
- * @param {(date: Date) => any} [props.formatter] - Optional formatter function to format the date before confirming.
- * @param {(date: Date | any) => void} props.onConfirm - Callback function to be called when the date is confirmed.
- * @param {any} ref - The ref to be forwarded to the component.
- *
- * @returns {JSX.Element} The rendered date-time picker component.
- */
 
 export default StyledDateTimePicker;

@@ -6,3 +6,10 @@ export interface TypeParamsPaging {
     };
     [key: string]: any;
 }
+
+export interface PagingResponse<T> {
+    data: T[];
+    pageIndex: number;
+    totalPages: number;
+    totalItems: number;
+}

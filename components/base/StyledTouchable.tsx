@@ -1,8 +1,8 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { Pressable, PressableProps } from 'react-native';
+import { Pressable, PressableProps, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { throttle } from 'lodash';
 
-export interface StyledTouchableProps extends PressableProps {
+export interface StyledTouchableProps extends TouchableOpacityProps {
     disabled?: boolean;
     onPress?(): void;
     onPressIn?(): void;
@@ -21,9 +21,9 @@ const StyledTouchable: FunctionComponent<StyledTouchableProps> = (props: StyledT
     const handlePress = throttle(onPress, throttleTime, configThrottle);
 
     return (
-        <Pressable disabled={disabled} {...props} onPress={handlePress}>
+        <TouchableOpacity activeOpacity={0.6} disabled={disabled} {...props} onPress={handlePress}>
             {children}
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

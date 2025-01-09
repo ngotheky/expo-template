@@ -27,4 +27,14 @@ const StyledWebView = (props: WebViewProps) => {
     );
 };
 
+/**
+ * A styled WebView component that wraps the react-native-webview's WebView component.
+ * It provides additional functionality such as pull-to-refresh, custom loading indicator,
+ * and custom error handling.
+ *
+ * @param {WebViewProps} props - The properties passed to the WebView component.
+ *
+ * @returns {JSX.Element} A styled WebView component.
+ */
+
 export default memo(StyledWebView, isEqual);
