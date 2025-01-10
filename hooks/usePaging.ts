@@ -11,7 +11,18 @@ interface IPaging<T> {
 }
 
 const SIZE_LIMIT = 10;
-
+/**
+ * Custom hook for handling paginated data fetching using `useInfiniteQuery`.
+ *
+ * @template T - The type of the data being fetched.
+ * @param {Object} params - The parameters for the hook.
+ * @param {Function} params.requestPaging - The function to request paginated data.
+ * @param {Object} [params.initialParams={}] - Initial parameters to be passed to the request function.
+ * @param {boolean} params.enabled - Flag to enable or disable the query.
+ * @param {string} params.queryKey - The key to uniquely identify the query.
+ * @returns {Object} - The result of the query including the paginated data.
+ * @returns {Array<T>} data - The flattened array of paginated data.
+ */
 function usePaging<T>({ requestPaging, initialParams = {}, enabled, queryKey }: IPaging<T>) {
     const fetchData = async ({ pageParam = 0 }): Promise<PagingResponse<T>> => {
         const res: PagingResponse<T> = await requestPaging({

@@ -111,6 +111,12 @@ module.exports = ({ config }: ConfigContext) => {
                     cameraPermission: 'The app accesses your camera to let you take photos.',
                 },
             ],
+            [
+                'onesignal-expo-plugin',
+                {
+                    mode: 'development',
+                },
+            ],
         ],
         experiments: {
             typedRoutes: true,
@@ -123,6 +129,7 @@ module.exports = ({ config }: ConfigContext) => {
                 projectId: process.env.EXPO_PROJECT_ID,
             },
             env: process.env,
+            oneSignalAppId: process.env.ONE_SIGNAL_APP_ID,
         },
         owner: 'kyngodev',
         updates: {

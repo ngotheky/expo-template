@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { loadLocaleLanguage } from '@/utils/i18next';
 import { addMenuClearAsyncStorage } from '@/utils/helper';
 import { useColorScheme } from 'react-native';
+import useNotification from '@/hooks/useNotification';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
+    useNotification();
 
     useEffect(() => {
         if (loaded) {
