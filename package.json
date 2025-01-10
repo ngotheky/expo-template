@@ -98,6 +98,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@testing-library/react-native": "^12.9.0",
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.17.13",
