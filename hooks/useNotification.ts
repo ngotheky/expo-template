@@ -60,7 +60,6 @@ function useNotification() {
             OneSignal.Notifications.addEventListener('foregroundWillDisplay', event => {
                 event.getNotification().display();
             });
-
             if (profile?.id) {
                 OneSignal.login(profile.id);
                 OneSignal.User.addTag('memberId', profile.id);
@@ -69,7 +68,7 @@ function useNotification() {
                 OneSignal.logout();
             }
         } catch (error) {
-            AlertMessage(error as string);
+            AlertMessage(error);
         }
     };
 }

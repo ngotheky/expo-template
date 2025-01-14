@@ -9,7 +9,7 @@ interface Props {
     checkNetworkError?: boolean;
 }
 
-function AlertMessage(message: string): void;
+function AlertMessage(message: string | unknown): void;
 function AlertMessage(props: Props): void;
 
 /**
@@ -29,8 +29,8 @@ function AlertMessage(props: Props): void;
  * If `cancel` is true, a cancel button will be shown alongside the confirm button.
  * The `onPressOk` callback will be executed when the confirm button is pressed.
  */
-function AlertMessage(arg: string | Props) {
-    const props: Props = typeof arg === 'string' ? { message: arg } : arg;
+function AlertMessage(arg: unknown | string | Props) {
+    const props: Props = typeof arg === 'string' ? { message: arg } : (arg as Props);
 
     const { message, title, onPressOk, cancel, checkNetworkError } = props;
     if (!(checkNetworkError && message === i18next.t('common.error.network'))) {
