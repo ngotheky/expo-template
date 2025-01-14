@@ -137,4 +137,33 @@ npx expo prebuild
 -   Eas update hoạt động giống như code push của `appcenter`
 -   App sẽ nhận code mới theo channel được config trong `eas.json`
 
+## Dependencies
+
+-   [`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage)
+-   [`@react-native-community/datetimepicker`](https://github.com/react-native-datetimepicker/datetimepicker)
+-   [`@react-native-community/netinfo`](https://github.com/react-native-netinfo/react-native-netinfo)
+-   [`@react-navigation/bottom-tabs`](https://reactnavigation.org/docs/bottom-tab-navigator)
+-   [`@shopify/flash-list`](https://shopify.github.io/flash-list/)
+-   [`@tanstack/react-query`](https://tanstack.com/query/v5)
+-   [`axios`](https://axios-http.com/)
+-   [`@alessiocancian/react-native-actionsheet`](https://github.com/alessiocancian/react-native-actionsheet)
+-   [`dayjs`](https://day.js.org/)
+-   [`expo-camera`](https://docs.expo.dev/versions/latest/sdk/camera/)
+-   [`expo-image-picker`](https://docs.expo.dev/versions/latest/sdk/imagepicker/)
+-   [`expo-location`](https://docs.expo.dev/versions/latest/sdk/location/)
+-   [`expo-router`](https://expo.github.io/router/docs)
+-   [`i18next`](https://www.i18next.com/)
+-   [`lodash`](https://lodash.com/)
+-   [`nativewind`](https://www.nativewind.dev/)
+-   [`numeral`](http://numeraljs.com/)
+-   [`patch-package`](https://github.com/ds300/patch-package)
+-   [`react-native-maps`](https://github.com/react-native-maps/react-native-maps)
+-   [`react-native-modal-datetime-picker`](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+-   [`react-native-modalize`](https://github.com/jeremybarbet/react-native-modalize)
+-   [`react-native-onesignal`](https://github.com/OneSignal/react-native-onesignal)
+-   [`react-hook-form`](https://react-hook-form.com/)
+-   [`yup`](https://github.com/jquense/yup)
+-   [`zustand`](https://docs.pmnd.rs/zustand/getting-started/introduction)
+-   [`tailwindcss`](https://tailwindcss.com/)
+
 ---
