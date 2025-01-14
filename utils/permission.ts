@@ -7,18 +7,11 @@ import { logger } from './helper';
 
 export const checkCamera = async () => {
     const { status } = await Camera.getCameraPermissionsAsync();
-    if (status === PermissionStatus.DENIED) {
-        const { status: newStatus } = await Camera.requestCameraPermissionsAsync();
-        return newStatus === PermissionStatus.GRANTED;
-    }
     if (status === PermissionStatus.GRANTED) {
         return true;
     }
-    if (status === PermissionStatus.UNDETERMINED) {
-        showRequestPermission('camera');
-        return false;
-    }
-    return false;
+    const { status: newStatus } = await Camera.requestCameraPermissionsAsync();
+    return newStatus === PermissionStatus.GRANTED;
 };
 
 export const checkLocation = async () => {
