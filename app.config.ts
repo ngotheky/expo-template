@@ -45,7 +45,7 @@ module.exports = ({ config }: ConfigContext) => {
                 backgroundColor: '#FFFFFF',
             },
             package: process.env.ANDROID_APP_ID,
-            versionCode: process.env.ANDROID_APP_VERSION_CODE,
+            versionCode: parseInt(process.env.ANDROID_APP_VERSION_CODE ?? '1'),
             config: {
                 googleMaps: {
                     apiKey: process.env.ANDROID_GOOGLE_API_KEY,
