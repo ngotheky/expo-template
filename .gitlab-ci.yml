@@ -9,8 +9,8 @@ eas_update:
         - when: never
     script:
         - echo "Setting up environment..."
-        - npm install
         - npm install -g eas-cli
+        - npm install
         - echo "Running EAS Update..."
         - if [ "$CI_COMMIT_BRANCH" = "staging" ]; then
           NODE_ENV=staging eas update --branch staging --message "Update from commit $CI_COMMIT_SHORT_SHA";
