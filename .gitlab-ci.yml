@@ -4,9 +4,7 @@ stages:
 eas_update:
     stage: deploy
     rules:
-        - if: $CI_MERGE_REQUEST_IID && $CI_COMMIT_BRANCH == "staging"
-          when: on_success
-        - if: $CI_MERGE_REQUEST_IID && $CI_COMMIT_BRANCH == "develop"
+        - if: $CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "develop")
           when: on_success
         - when: never
     script:
@@ -15,11 +13,9 @@ eas_update:
         - npm install -g eas-cli
         - echo "Running EAS Update..."
         - if [ "$CI_COMMIT_BRANCH" = "staging" ]; then
-          eas update --branch staging --message "Update from MR $CI_MERGE_REQUEST_IID ($CI_COMMIT_SHORT_SHA)";
+          NODE_ENV=staging eas update --branch staging --message "Update from commit $CI_COMMIT_SHORT_SHA";
           elif [ "$CI_COMMIT_BRANCH" = "develop" ]; then
-          eas update --branch develop --message "Update from MR $CI_MERGE_REQUEST_IID ($CI_COMMIT_SHORT_SHA)";
+          NODE_ENV=development eas update --branch develop --message "Update from commit $CI_COMMIT_SHORT_SHA";
           fi
-    environment:
-        name: production
     variables:
         EXPO_TOKEN: $EXPO_TOKEN
