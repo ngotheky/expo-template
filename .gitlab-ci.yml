@@ -9,7 +9,9 @@ eas_update:
         - when: never
     script:
         - echo "Setting up environment..."
-        - npm install -g eas-cli
+        - curl -sL https://deb.nodesource.com/setup_20.x | bash -
+        - apt-get install -y nodejs
+        - npm install -g expo-cli eas-cli
         - npm install
         - echo "Running EAS Update..."
         - if [ "$CI_COMMIT_BRANCH" = "staging" ]; then
