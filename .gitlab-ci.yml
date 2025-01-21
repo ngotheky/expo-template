@@ -5,7 +5,10 @@ eas_update:
     stage: deploy
     rules:
         - if: $CI_MERGE_REQUEST_IID && $CI_COMMIT_BRANCH == "staging"
+          when: on_success
         - if: $CI_MERGE_REQUEST_IID && $CI_COMMIT_BRANCH == "develop"
+          when: on_success
+        - when: never
     script:
         - echo "Setting up environment..."
         - npm install
@@ -20,5 +23,3 @@ eas_update:
         name: production
     variables:
         EXPO_TOKEN: $EXPO_TOKEN
-    only:
-        - merge_requests
