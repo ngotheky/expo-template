@@ -38,8 +38,9 @@ jobs:
               env:
                   EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
               run: |
+                  COMMIT_HASH="${{ github.sha }}"
                   if [[ "${{ github.ref_name }}" == "staging" ]]; then
-                    eas update --branch staging --message "Update for staging branch"
+                    eas update --branch staging --message "Automatic update for staging branch - ${COMMIT_HASH}"
                   elif [[ "${{ github.ref_name }}" == "develop" ]]; then
-                    eas update --branch develop
+                    eas update --branch develop --message "Automatic update for develop branch - ${COMMIT_HASH}"
                   fi
