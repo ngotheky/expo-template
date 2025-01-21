@@ -19,20 +19,28 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 20
 
             - name: Install dependencies
               run: npm install
 
-            - name: Login to Expo
+            - name: Install EAS CLI and dotenv
+              run: |
+                  npm install -g eas-cli
+                  npm install dotenv
+
+            - name: Set Expo Token
               env:
                   EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-              run: expo login --token $EXPO_TOKEN
+              run: echo "Expo token is set"
 
             - name: Run EAS Update
+              env:
+                  EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
               run: |
+                  COMMIT_HASH="${{ github.sha }}"
                   if [[ "${{ github.ref_name }}" == "staging" ]]; then
-                    eas update --branch staging --message "Update for staging branch"
+                   NODE_ENV=staging eas update --branch staging --message "Automatic update for staging branch - ${COMMIT_HASH}"
                   elif [[ "${{ github.ref_name }}" == "develop" ]]; then
-                    eas update --branch develop --message "Update for develop branch"
+                   NODE_ENV=development eas update --branch develop --message "Automatic update for develop branch - ${COMMIT_HASH}"
                   fi

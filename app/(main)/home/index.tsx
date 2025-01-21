@@ -31,7 +31,7 @@ export default function Home() {
             <Link push href="/profile/24" asChild>
                 <Button title="Detail" />
             </Link>
-            <RadioButton value={1} label="Option 1" isChecked={true} onChange={value => console.log(value)} />
+            {/* <RadioButton value={1} label="Option 1" isChecked={true} onChange={value => console.log(value)} /> */}
             <StyledDateTimePicker mode="datetime" date={new Date()} onConfirm={value => console.log(value)}>
                 <StyledText className="!text-primary" originValue="Select Date" />
             </StyledDateTimePicker>
