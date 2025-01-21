@@ -19,7 +19,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 20
 
             - name: Install dependencies
               run: npm install
@@ -42,3 +42,4 @@ jobs:
                     eas update --branch staging --message "Update for staging branch"
                   elif [[ "${{ github.ref_name }}" == "develop" ]]; then
                     eas update --branch develop
+                  fi
