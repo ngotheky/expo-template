@@ -21,24 +21,17 @@ jobs:
               with:
                   node-version: 16
 
-            - name: Install dependencies
-              run: npm install
-
             - name: Install EAS CLI
               run: npm install -g eas-cli
 
             - name: Set Expo Token
-              id: set_token
-              run: |
-                  if [[ "${{ github.ref_name }}" == "staging" ]]; then
-                    echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN_STAGING }}" >> $GITHUB_ENV
-                  elif [[ "${{ github.ref_name }}" == "develop" ]]; then
-                    echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN_DEVELOP }}" >> $GITHUB_ENV
-                  fi
+              env:
+                  EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+              run: echo "Expo token is set"
 
             - name: Run EAS Update
               env:
-                  EXPO_TOKEN: ${{ env.EXPO_TOKEN }}
+                  EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
               run: |
                   if [[ "${{ github.ref_name }}" == "staging" ]]; then
                     eas update --branch staging --message "Update for staging branch"
