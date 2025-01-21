@@ -12,11 +12,13 @@ import RadioButton from '@/components/base/RadioButton';
 import { MaterialIcons } from '@expo/vector-icons';
 import request from '@/api/request';
 import usePaging from '@/hooks/usePaging';
+import { useTranslation } from 'react-i18next';
 
 const searchWorker = (params: any): Promise<any> => request.post(`common/worker`, params);
 
 export default function Home() {
     const [image, setImage] = useState('');
+    const { t } = useTranslation();
     const { data, refetch, isRefetching, isFetchingNextPage, fetchNextPage } = usePaging<{ name: string }>({
         requestPaging: searchWorker,
         queryKey: 'common/worker',
@@ -33,7 +35,14 @@ export default function Home() {
             <StyledDateTimePicker mode="datetime" date={new Date()} onConfirm={value => console.log(value)}>
                 <StyledText className="!text-primary" originValue="Select Date" />
             </StyledDateTimePicker>
-            <StyledInput className="bg-white" />
+            <StyledInput
+                className="bg-white"
+                label="common.noData"
+                placeholder={t('common.noText')}
+                renderRight={() => {
+                    return <MaterialIcons size={28} name="search" color={'gray'} />;
+                }}
+            />
             <ImagePicker image={image} setImage={setImage}>
                 <MaterialIcons size={28} name="photo-library" color={'gray'} />
             </ImagePicker>

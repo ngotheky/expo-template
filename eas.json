@@ -24,9 +24,9 @@
                 "image": "latest"
             }
         },
-        "preview": {
-            "environment": "preview",
-            "channel": "preview",
+        "staging": {
+            "environment": "staging",
+            "channel": "staging",
             "android": {
                 "buildType": "apk"
             },
