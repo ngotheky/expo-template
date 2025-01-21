@@ -137,6 +137,28 @@ npx expo prebuild
 -   Eas update hoạt động giống như code push của `appcenter`
 -   App sẽ nhận code mới theo channel được config trong `eas.json`
 
+### Config auto update CI
+
+1. Lấy access token
+   Vào https://expo.dev/settings/access-tokens chọn `Create Token` để tạo access token
+
+2. Setting trên git
+
+### Github
+
+Vào **Settings** > **Actions secrets and variables** > **Actions** > **New repository secret** tạo 1 repository secret với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add secret** để add access token
+
+### Gitlab
+
+Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add variable** để add access token
+
+**Lưu ý:**
+
+-   Sẽ chạy khi có merge request đc merge vào nhánh
+-   CI chỉ hoạt động với nhánh `staging` và nhánh `develop`
+-   Với nhánh `main` là môi trường `production` nên sẽ phải update bằng tay để đảm bảo an toàn
+-   Để thêm nhánh hoặc sửa lại CI thì cần sửa lại file `.github/workflows/eas-update.yml` đối với github và file `.gitlab-ci.yml` đối với gitlab hoặc amela git
+
 ## Dependencies
 
 -   [`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage)
