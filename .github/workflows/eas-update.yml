@@ -27,7 +27,7 @@ jobs:
             - name: Login to Expo
               env:
                   EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-              run: expo login --token $EXPO_TOKEN
+              run: npx expo login --token $EXPO_TOKEN
 
             - name: Run EAS Update
               run: |
