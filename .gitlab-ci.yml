@@ -16,9 +16,9 @@ eas_update:
         - npm install
         - echo "Running EAS Update..."
         - if [ "$CI_COMMIT_BRANCH" = "staging" ]; then
-          NODE_ENV=staging eas update --branch staging --message "Update from commit $CI_COMMIT_SHORT_SHA";
+          NODE_ENV=staging eas update --branch staging --message "Automatic update for staging from commit $CI_COMMIT_SHORT_SHA";
           elif [ "$CI_COMMIT_BRANCH" = "develop" ]; then
-          NODE_ENV=development eas update --branch develop --message "Update from commit $CI_COMMIT_SHORT_SHA";
+          NODE_ENV=development eas update --branch develop --message "Automatic update for staging from commit $CI_COMMIT_SHORT_SHA";
           fi
     variables:
         EXPO_TOKEN: $EXPO_TOKEN
