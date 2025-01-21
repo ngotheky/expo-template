@@ -24,12 +24,18 @@ jobs:
             - name: Install dependencies
               run: npm install
 
-            - name: Login to Expo
-              env:
-                  EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-              run: npx expo login --token $EXPO_TOKEN
+            - name: Set Expo Token
+              id: set_token
+              run: |
+                  if [[ "${{ github.ref_name }}" == "staging" ]]; then
+                    echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN_STAGING }}" >> $GITHUB_ENV
+                  elif [[ "${{ github.ref_name }}" == "develop" ]]; then
+                    echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN_DEVELOP }}" >> $GITHUB_ENV
+                  fi
 
             - name: Run EAS Update
+              env:
+                  EXPO_TOKEN: ${{ env.EXPO_TOKEN }}
               run: |
                   if [[ "${{ github.ref_name }}" == "staging" ]]; then
                     eas update --branch staging --message "Update for staging branch"
