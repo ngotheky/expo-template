@@ -146,11 +146,11 @@ npx expo prebuild
 
 ### Github
 
-    Vào **Settings** > **Actions secrets and variables** > **Actions** > **New repository secret** tạo 1 repository secret với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add secret** để add access token
+Vào **Settings** > **Actions secrets and variables** > **Actions** > **New repository secret** tạo 1 repository secret với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add secret** để add access token
 
 ### Gitlab
 
-    Vào **Settings** > **CI/CD** > **Variables**  tạo 1 variable với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add variable** để add access token
+Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add variable** để add access token
 
 **Lưu ý:**
 
