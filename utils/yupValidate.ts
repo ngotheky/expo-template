@@ -7,6 +7,7 @@ import {
     REGEX_EMAIL,
     REGEX_PASSWORD,
     REGEX_PHONE,
+    REGEX_FAX,
     USERNAME_MAX_LENGTH,
     USERNAME_MIN_LENGTH,
 } from './validate';
@@ -68,6 +69,12 @@ const yupValidate = {
     birthday: () => yup.string().required(() => requireField('birthday')),
     labelPicker: () => yup.string().required(() => requireField('labelPicker')),
     policy: () => yup.string().required(() => requireField('policy')),
+    postalCode: () => yup.string().required(() => requireField('postalCode')),
+    fax: () =>
+        yup
+            .string()
+            .required(() => requireField('fax'))
+            .matches(REGEX_FAX, i18next.t('error.faxInvalid')),
 };
 
 export default yupValidate;

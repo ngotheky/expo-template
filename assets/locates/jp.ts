@@ -112,6 +112,7 @@ export default {
         emailEmpty: '全ての項目を入力してください。',
         emailNotRegister: '入力したメールアドレスがまだ登録されていません。',
         phoneInvalid: '電話番号は正しくありません。',
+        faxInvalid: 'FAX番号は正しくありません。',
         nameLength: '5文字から8文字までに入力してください。',
         trimSpace: '文頭や文末には空白文字を入力しないでください。',
         messageLength: '1文字以上 255文字以内。',

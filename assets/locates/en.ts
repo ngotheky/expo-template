@@ -101,6 +101,7 @@ export default {
         emailEmpty: 'Please fill in email address.',
         emailNotRegister: 'Email address you entered has not been registered yet.',
         phoneInvalid: 'Phone number is invalid.',
+        faxInvalid: 'Fax number is invalid.',
         nameLength: 'Minimum is 5 characters and maximum is 8 characters.',
         trimSpace: 'Input cannot have space in start and end.',
         messageLength: 'Minimum is 1 character and maximum is 255 characters.',
