@@ -28,11 +28,11 @@
         "generate-keystore-prod": "cp .env.production .env && eas credentials",
         "ios": "expo run:ios",
         "web": "expo start --web",
-        "test": "jest --watchAll",
+        "test": "jest --watch --coverage=false --changedSince=origin/main",
+        "testDebug": "jest -o --watch --coverage=false",
+        "testFinal": "jest",
+        "updateSnapshots": "jest -u --coverage=false",
         "lint": "expo lint"
-    },
-    "jest": {
-        "preset": "jest-expo"
     },
     "dependencies": {
         "@alessiocancian/react-native-actionsheet": "^3.2.0",
@@ -46,7 +46,6 @@
         "@shopify/flash-list": "1.7.1",
         "@tanstack/react-query": "^5.61.5",
         "axios": "^1.7.9",
-        "babel-plugin-module-resolver": "^5.0.2",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.13",
         "dotenv": "^16.4.7",
@@ -101,6 +100,7 @@
         "@babel/core": "^7.25.2",
         "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
+        "@testing-library/jest-native": "^5.4.3",
         "@testing-library/react-native": "^12.9.0",
         "@types/jest": "^29.5.12",
         "@types/lodash": "^4.17.13",
@@ -109,12 +109,58 @@
         "@types/react": "~18.3.12",
         "@types/react-test-renderer": "^18.3.0",
         "autoprefixer": "^10.4.20",
-        "jest": "^29.2.1",
+        "babel-jest": "^29.7.0",
+        "babel-plugin-module-resolver": "^5.0.2",
+        "jest": "^29.7.0",
         "jest-expo": "~52.0.2",
         "metro": "^0.81.0",
         "postcss": "^8.4.49",
         "react-test-renderer": "18.3.1",
-        "tailwindcss": "^3.4.16",
+        "tailwindcss": "^4.0.0",
         "typescript": "^5.3.3"
+    },
+    "jest": {
+        "preset": "jest-expo",
+        "transformIgnorePatterns": [
+            "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+        ],
+        "setupFilesAfterEnv": [
+            "<rootDir>/jest.setup.js"
+        ],
+        "collectCoverage": true,
+        "automock": false,
+        "testEnvironment": "jsdom",
+        "testEnvironmentOptions": {
+            "customExportConditions": [
+                "node",
+                "node-addons"
+            ]
+        },
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/$1"
+        },
+        "testPathIgnorePatterns": [
+            "<rootDir>/node_modules/",
+            "<rootDir>/components/__tests__/base/StyledImage.test.tsx",
+            "<rootDir>/components/__tests__/base/modal/ModalizeManager.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledTouchable.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledNoData.test.tsx",
+            "<rootDir>/components/__tests__/base/CheckBox.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledButton.test.tsx",
+            "<rootDir>/components/__tests__/index.test.tsx",
+            "<rootDir>/components/__tests__/base/RadioButton.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledInput.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledList.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledIcon.test.tsx",
+            "<rootDir>/components/__tests__/base/StyledIndicator.test.tsx"
+        ],
+        "collectCoverageFrom": [
+            "**/*.{ts,tsx,js,jsx}",
+            "!**/coverage/**",
+            "!**/node_modules/**",
+            "!**/babel.config.js",
+            "!**/expo-env.d.ts",
+            "!**/.expo/**"
+        ]
     }
 }
