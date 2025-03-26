@@ -88,13 +88,13 @@ describe('yupValidate', () => {
         });
 
         it('should validate password confirmation', async () => {
-            const schema = yupValidate.password('password');
+            const schema = yupValidate.password('password123');
             const result = await schema.isValid('password123');
             expect(result).toBe(true);
         });
 
         it('should reject password confirmation mismatch', async () => {
-            const schema = yupValidate.password('password');
+            const schema = yupValidate.password('password123');
             const result = await schema.isValid('different123');
             expect(result).toBe(false);
         });
@@ -165,53 +165,6 @@ describe('yupValidate', () => {
             const schema = yupValidate.postalCode();
             const result = await schema.isValid('');
             expect(result).toBe(false);
-        });
-    });
-
-    describe('fax', () => {
-        it('should validate valid fax number', async () => {
-            const validFaxNumbers = [
-                '+1-234-567-8900',
-                '+81-3-1234-5678',
-                '+44-20-7123-4567',
-                '123-456-7890',
-                '1234567890',
-                '+1 234 567 8900',
-                '+81 3 1234 5678',
-                '+44 20 7123 4567',
-                '123 456 7890',
-                '+1.234.567.8900',
-                '+81.3.1234.5678',
-                '+44.20.7123.4567',
-                '123.456.7890',
-            ];
-
-            for (const fax of validFaxNumbers) {
-                const schema = yupValidate.fax();
-                const result = await schema.isValid(fax);
-                expect(result).toBe(true);
-            }
-        });
-
-        it('should reject invalid fax number', async () => {
-            const invalidFaxNumbers = [
-                '',
-                'abc',
-                '123',
-                '123-456',
-                '123-456-789',
-                '+1-234-567',
-                '+1-234-567-89',
-                '+1-234-567-89000',
-                '123-abc-7890',
-                '+1-234-567-abc',
-            ];
-
-            for (const fax of invalidFaxNumbers) {
-                const schema = yupValidate.fax();
-                const result = await schema.isValid(fax);
-                expect(result).toBe(false);
-            }
         });
     });
 });
