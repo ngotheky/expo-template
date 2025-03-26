@@ -1,0 +1,61 @@
+{
+    "name": "Hooks Rules",
+    "description": "Rules for using React hooks",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "hook-naming",
+            "name": "Hook Naming",
+            "description": "Custom hooks must start with 'use'",
+            "pattern": "^export\\s+(const|function)\\s+use[A-Z]",
+            "filePattern": "hooks/.+\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Custom hooks must start with 'use' and use camelCase (e.g., useAuth, useDataFetching)"
+        },
+        {
+            "id": "dependencies-array",
+            "name": "Dependencies Array",
+            "description": "useEffect and useCallback must have a dependencies array",
+            "pattern": "use(Effect|Callback|Memo)\\(.*,\\s*\\[.*\\]\\)",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "useEffect, useCallback, and useMemo must have a dependencies array"
+        },
+        {
+            "id": "no-hooks-inside-callbacks",
+            "name": "No Hooks Inside Callbacks",
+            "description": "Do not use hooks inside callbacks or conditions",
+            "pattern": "if\\s*\\(.+\\)\\s*{\\s*use[A-Z]|\\s+use[A-Z][a-zA-Z0-9]*\\(.*\\)\\s*=>",
+            "filePattern": ".+\\.(tsx|jsx|ts|js)$",
+            "severity": "error",
+            "message": "Do not use hooks inside callbacks or conditions"
+        },
+        {
+            "id": "exhaustive-deps",
+            "name": "Exhaustive Dependencies",
+            "description": "Use exhaustive dependencies in hooks",
+            "pattern": "// eslint-disable-next-line react-hooks/exhaustive-deps",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Avoid disabling the react-hooks/exhaustive-deps rule"
+        },
+        {
+            "id": "custom-hook-return-type",
+            "name": "Custom Hook Return Type",
+            "description": "Custom hooks should have a clearly defined return type",
+            "pattern": "export\\s+(const|function)\\s+use[A-Z][a-zA-Z0-9]*.*:\\s*.*=>|export\\s+(const|function)\\s+use[A-Z][a-zA-Z0-9]*.*\\):\\s*[A-Za-z<>\\[\\]{}|,]+",
+            "filePattern": "hooks/.+\\.(ts|tsx)$",
+            "severity": "suggestion",
+            "message": "Custom hooks should have a clearly defined return type"
+        },
+        {
+            "id": "english-hook-comments",
+            "name": "English Hook Comments",
+            "description": "Hook comments must be in English",
+            "filePattern": "hooks/.+\\.(ts|tsx|js|jsx)$",
+            "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
+            "severity": "warning",
+            "message": "Hook comments must be written in English for better team collaboration"
+        }
+    ]
+}

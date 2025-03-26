@@ -1,0 +1,79 @@
+{
+    "name": "Testing Rules",
+    "description": "Rules for writing unit tests with Jest",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "test-naming",
+            "name": "Test Naming",
+            "description": "Test names should clearly describe the functionality being tested",
+            "pattern": "(it|test)\\(['\"]should\\s+\\w+|['\"]\\w+\\s+should",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Test names should start with 'should' or clearly describe the functionality being tested"
+        },
+        {
+            "id": "use-describe-blocks",
+            "name": "Use Describe Blocks",
+            "description": "Use describe blocks to group related tests",
+            "pattern": "describe\\(['\"]",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Use describe blocks to group related tests together"
+        },
+        {
+            "id": "test-assertion",
+            "name": "Test Assertion",
+            "description": "Each test case should have at least one assertion",
+            "pattern": "expect\\(",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Each test case should have at least one assertion (expect)"
+        },
+        {
+            "id": "mock-naming",
+            "name": "Mock Naming",
+            "description": "Name mock functions clearly",
+            "pattern": "jest\\.fn\\(\\)\\s*as\\s+\\w+|const\\s+\\w+\\s*=\\s*jest\\.fn\\(\\)",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Name mock functions clearly (e.g., mockHandleClick, fetchDataMock)"
+        },
+        {
+            "id": "test-only",
+            "name": "No Test Only",
+            "description": "Do not use .only in production code",
+            "pattern": "\\.(only)\\(",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Do not use .only in production code"
+        },
+        {
+            "id": "test-skip",
+            "name": "No Test Skip",
+            "description": "Do not use .skip in production code",
+            "pattern": "\\.(skip)\\(",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Avoid using .skip in production code"
+        },
+        {
+            "id": "coverage-comment",
+            "name": "Test Coverage Comment",
+            "description": "Add comments explaining handled edge cases",
+            "pattern": "//\\s*Test\\s+coverage|//\\s*Edge\\s+case",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Add comments explaining edge cases handled in tests"
+        },
+        {
+            "id": "english-test-comments",
+            "name": "English Test Comments",
+            "description": "Test comments must be written in English",
+            "filePattern": ".+\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+            "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
+            "severity": "warning",
+            "message": "Test comments must be written in English"
+        }
+    ]
+}

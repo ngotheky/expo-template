@@ -1,0 +1,124 @@
+{
+    "name": "Expo Rules",
+    "description": "Rules for using Expo in the project",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "use-expo-components",
+            "name": "Use Expo Components",
+            "description": "Prioritize using Expo components when possible",
+            "pattern": "import\\s+.*?from\\s+['\"]react-native['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Check if Expo provides a similar component (e.g., expo-av instead of react-native-video)"
+        },
+        {
+            "id": "expo-sdk-version",
+            "name": "Expo SDK Version",
+            "description": "Check the Expo SDK version being used",
+            "pattern": "\"expo\":\\s*\"[\\^~]?([0-9]+\\.[0-9]+\\.[0-9]+)\"",
+            "filePattern": "package.json$",
+            "severity": "warning",
+            "message": "Ensure you are using the latest stable Expo SDK version"
+        },
+        {
+            "id": "expo-constants-usage",
+            "name": "Expo Constants Usage",
+            "description": "Use expo-constants to access configuration information",
+            "pattern": "import\\s+.*?Constants.*?from\\s+['\"]expo-constants['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Use expo-constants to access application configuration information"
+        },
+        {
+            "id": "expo-router-navigation",
+            "name": "Expo Router Navigation",
+            "description": "Prefer using Expo Router for navigation",
+            "pattern": "import\\s+.*?from\\s+['\"]@react-navigation/[a-zA-Z0-9-]+['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Consider using expo-router instead of react-navigation for file-based routing"
+        },
+        {
+            "id": "expo-splash-screen",
+            "name": "Expo Splash Screen",
+            "description": "Use expo-splash-screen to manage the splash screen",
+            "pattern": "import\\s+.*?from\\s+['\"]expo-splash-screen['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Use expo-splash-screen to manage your application's splash screen"
+        },
+        {
+            "id": "expo-updates",
+            "name": "Expo Updates",
+            "description": "Use expo-updates for OTA updates",
+            "pattern": "import\\s+.*?from\\s+['\"]expo-updates['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Use expo-updates to support Over-The-Air updates"
+        },
+        {
+            "id": "app-config-structure",
+            "name": "App Config Structure",
+            "description": "Check app.config.ts/app.json structure",
+            "pattern": "export\\s+default\\s+\\{\\s*expo\\s*:",
+            "filePattern": "app\\.config\\.(ts|js)$",
+            "severity": "warning",
+            "message": "Ensure app.config.ts structure follows Expo's configuration structure"
+        },
+        {
+            "id": "expo-vector-icons",
+            "name": "Expo Vector Icons",
+            "description": "Use @expo/vector-icons for icons",
+            "pattern": "import\\s+.*?from\\s+['\"]react-native-vector-icons|@expo/vector-icons['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Use @expo/vector-icons for icons in Expo projects"
+        },
+        {
+            "id": "expo-status-bar",
+            "name": "Expo Status Bar",
+            "description": "Use expo-status-bar instead of StatusBar from react-native",
+            "pattern": "import\\s+.*?StatusBar.*?from\\s+['\"]react-native['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Use expo-status-bar instead of StatusBar from react-native"
+        },
+        {
+            "id": "expo-notifications",
+            "name": "Expo Notifications",
+            "description": "Use expo-notifications for push notifications",
+            "pattern": "import\\s+.*?from\\s+['\"]react-native-push-notification['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Use expo-notifications instead of other libraries for push notifications"
+        },
+        {
+            "id": "expo-dev-client",
+            "name": "Expo Dev Client",
+            "description": "Use expo-dev-client for development builds",
+            "pattern": "eas\\s+build",
+            "filePattern": ".+\\.(md|txt|yml)$",
+            "severity": "suggestion",
+            "message": "Use expo-dev-client for development builds with Expo"
+        },
+        {
+            "id": "expo-english-comments",
+            "name": "Expo English Comments",
+            "description": "Expo-related comments must be in English",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "pattern": "(expo|Expo).*?//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*",
+            "severity": "warning",
+            "message": "Expo-related comments must be written in English"
+        },
+        {
+            "id": "base-component-documentation",
+            "name": "Base Component Documentation",
+            "description": "Base components should have JSDoc documentation",
+            "filePattern": "components/(?!.*/).+\\.(tsx|jsx)$",
+            "pattern": "/\\*\\*[\\s\\S]*?\\*/\\s*export|//\\s*[A-Za-z0-9\\s]+\\s*\\n\\s*export",
+            "severity": "warning",
+            "message": "Base components should have JSDoc documentation explaining their purpose and props"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "name": "Styling Rules",
+    "description": "Rules for using stylesheets and Tailwind CSS",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "tailwind-className",
+            "name": "Tailwind ClassName",
+            "description": "Use className for Tailwind CSS",
+            "pattern": "className=",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "warning",
+            "message": "Use className instead of style when working with Tailwind CSS"
+        },
+        {
+            "id": "stylesheet-end-of-file",
+            "name": "StyleSheet at the end of file",
+            "description": "StyleSheet.create should be placed at the end of the file",
+            "pattern": "const\\s+styles\\s*=\\s*StyleSheet.create\\({[\\s\\S]*?\\})\\s*;?\\s*$",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "suggestion",
+            "message": "StyleSheet.create should be placed at the end of the file"
+        },
+        {
+            "id": "avoid-inline-styles",
+            "name": "Avoid Inline Styles",
+            "description": "Limit the use of inline styles",
+            "pattern": "style=\\{\\{[^}]+\\}\\}",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "warning",
+            "message": "Avoid using inline styles, use StyleSheet or Tailwind instead"
+        },
+        {
+            "id": "strict-inline-styles",
+            "name": "Strict Inline Styles Restriction",
+            "description": "Inline styles should only be used when there's no alternative",
+            "pattern": "style=\\{\\{[^}]+\\}\\}(?!.*?//\\s*INLINE_STYLE_NECESSARY)",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "error",
+            "message": "Inline styles are strongly discouraged. Use StyleSheet or Tailwind CSS. Only use inline styles when absolutely necessary and add a comment '// INLINE_STYLE_NECESSARY' to explain why."
+        },
+        {
+            "id": "style-naming-convention",
+            "name": "Style Naming Convention",
+            "description": "Name styles using camelCase",
+            "pattern": "styles\\.[a-z][a-zA-Z0-9]*",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "warning",
+            "message": "Style names should use camelCase (e.g., container, buttonContainer)"
+        },
+        {
+            "id": "use-theme-colors",
+            "name": "Use Theme Colors",
+            "description": "Use color variables from the theme instead of direct color codes",
+            "pattern": "color:\\s*['\"]#[0-9a-fA-F]{3,6}['\"]|backgroundColor:\\s*['\"]#[0-9a-fA-F]{3,6}['\"]",
+            "filePattern": ".+\\.(tsx|jsx|ts|js)$",
+            "severity": "warning",
+            "message": "Use color variables from the theme instead of direct color codes"
+        },
+        {
+            "id": "english-style-comments",
+            "name": "English Style Comments",
+            "description": "Style-related comments must be in English",
+            "filePattern": ".+\\.(tsx|jsx|ts|js)$",
+            "pattern": "(style|className|StyleSheet|tailwind).*?//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*",
+            "severity": "warning",
+            "message": "Style-related comments must be written in English"
+        }
+    ]
+}

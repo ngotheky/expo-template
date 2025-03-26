@@ -1,0 +1,70 @@
+{
+    "name": "TypeScript Rules",
+    "description": "Rules for using TypeScript",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "no-any",
+            "name": "Avoid any type",
+            "description": "Avoid using the any type",
+            "pattern": ":\\s*any",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "warning",
+            "message": "Avoid using the any type, be specific with your data types"
+        },
+        {
+            "id": "interface-naming",
+            "name": "Interface Naming",
+            "description": "Interfaces should start with 'I' or have suffixes like 'Props', 'State', 'Data', etc.",
+            "pattern": "interface\\s+(I[A-Z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*(Props|State|Data|Response|Request|Config|Options|Params|Context))",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "suggestion",
+            "message": "Interfaces should start with 'I' or have descriptive suffixes like 'Props', 'State', etc."
+        },
+        {
+            "id": "type-definitions",
+            "name": "Type Definitions",
+            "description": "Define types for objects and functions",
+            "pattern": ":\\s*\\{|=>\\s*\\{|function\\s+\\w+\\s*\\(.*\\)\\s*:\\s*\\w+",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "warning",
+            "message": "Define types for objects and function return types"
+        },
+        {
+            "id": "explicit-return-type",
+            "name": "Explicit Return Type",
+            "description": "Functions should have explicit return types",
+            "pattern": "function\\s+\\w+\\s*\\(.*\\)\\s*:|\\)\\s*:\\s*\\w+",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "suggestion",
+            "message": "Functions should have explicit return types"
+        },
+        {
+            "id": "use-type-aliases",
+            "name": "Use Type Aliases",
+            "description": "Use type aliases for complex types",
+            "pattern": "type\\s+[A-Z][a-zA-Z0-9]*\\s*=",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "suggestion",
+            "message": "Use type aliases for complex types to improve reusability"
+        },
+        {
+            "id": "no-non-null-assertion",
+            "name": "No Non-null Assertion",
+            "description": "Avoid using the non-null assertion operator (!)",
+            "pattern": "\\w+!\\.",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "severity": "warning",
+            "message": "Avoid using the non-null assertion operator (!), handle null or undefined explicitly"
+        },
+        {
+            "id": "english-ts-comments",
+            "name": "English TypeScript Comments",
+            "description": "TypeScript-related comments must be in English",
+            "filePattern": ".+\\.(ts|tsx)$",
+            "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
+            "severity": "warning",
+            "message": "TypeScript-related comments must be written in English"
+        }
+    ]
+}

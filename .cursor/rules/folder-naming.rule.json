@@ -1,0 +1,79 @@
+{
+    "name": "Folder Naming Rules",
+    "description": "Rules for naming folders in the project",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "root-folders-lowercase",
+            "name": "Root Folders Lowercase",
+            "description": "Root folders should be named using lowercase and be concise",
+            "pattern": "^[a-z]+(/|$)",
+            "filePattern": "^(?!node_modules).*$",
+            "severity": "warning",
+            "message": "Root folders should be named using lowercase and be concise (e.g., app, components, utils)"
+        },
+        {
+            "id": "feature-folders-kebab-case",
+            "name": "Feature Folders Kebab Case",
+            "description": "Feature folders should use kebab-case",
+            "pattern": "^[a-z]+(-[a-z]+)*(/|$)",
+            "filePattern": "app/[^/]+$",
+            "severity": "suggestion",
+            "message": "Feature folders should use kebab-case (e.g., user-profile, settings-page)"
+        },
+        {
+            "id": "component-folders-pascalcase",
+            "name": "Component Folders PascalCase",
+            "description": "Specific component folders should use PascalCase",
+            "pattern": "^[A-Z][a-zA-Z0-9]*(/|$)",
+            "filePattern": "components/[^/]+$",
+            "severity": "warning",
+            "message": "Specific component folders should use PascalCase (e.g., Button, UserCard)"
+        },
+        {
+            "id": "util-folders-camelcase",
+            "name": "Utility Folders CamelCase",
+            "description": "Utility folders should use camelCase",
+            "pattern": "^[a-z][a-zA-Z0-9]*(/|$)",
+            "filePattern": "utils/[^/]+$",
+            "severity": "suggestion",
+            "message": "Utility folders should use camelCase (e.g., dateUtils, stringHelpers)"
+        },
+        {
+            "id": "test-folders-match-source",
+            "name": "Test Folders Match Source",
+            "description": "Test folders should match the source directory structure",
+            "pattern": "^__tests__(/|$)",
+            "filePattern": ".*",
+            "severity": "suggestion",
+            "message": "Test folders should match the source directory structure or be inside __tests__"
+        },
+        {
+            "id": "no-uppercase-folders",
+            "name": "No Uppercase Folders",
+            "description": "Avoid using uppercase in folder names (except for PascalCase for components)",
+            "pattern": "^(?!components/)[^A-Z]+(/|$)",
+            "filePattern": ".*",
+            "severity": "warning",
+            "message": "Avoid using uppercase in folder names (except for PascalCase for components)"
+        },
+        {
+            "id": "no-spaces-in-folder-names",
+            "name": "No Spaces in Folder Names",
+            "description": "Do not use spaces in folder names",
+            "pattern": "^[^ ]+(/|$)",
+            "filePattern": ".*",
+            "severity": "error",
+            "message": "Do not use spaces in folder names, use hyphens or camelCase instead"
+        },
+        {
+            "id": "special-folder-naming",
+            "name": "Special Folder Naming",
+            "description": "Special folders should follow naming conventions",
+            "pattern": "^(assets|hooks|api|store|types|provider|stacks)(/|$)",
+            "filePattern": "^(assets|hooks|api|store|types|provider|stacks)(/|$)",
+            "severity": "suggestion",
+            "message": "Special folders should follow naming conventions (assets, hooks, api, store, types, provider, stacks)"
+        }
+    ]
+}
