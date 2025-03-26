@@ -85,15 +85,6 @@
             "message": "Use expo-status-bar instead of StatusBar from react-native"
         },
         {
-            "id": "expo-notifications",
-            "name": "Expo Notifications",
-            "description": "Use expo-notifications for push notifications",
-            "pattern": "import\\s+.*?from\\s+['\"]react-native-push-notification['\"]",
-            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
-            "severity": "warning",
-            "message": "Use expo-notifications instead of other libraries for push notifications"
-        },
-        {
             "id": "expo-dev-client",
             "name": "Expo Dev Client",
             "description": "Use expo-dev-client for development builds",

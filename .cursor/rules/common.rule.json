@@ -119,6 +119,26 @@
             "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
             "severity": "warning",
             "message": "Comments must be written in English for better team collaboration"
+        },
+        {
+            "id": "create-component-test",
+            "name": "Create Test for New Component",
+            "description": "Each new component should have a corresponding test file",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "antiPattern": ".+test\\.(tsx|jsx)$",
+            "fixCommand": "npm run generate-test {filePath}",
+            "severity": "error",
+            "message": "Create a test file for this component using 'npm run generate-test {filePath}' to generate a test file automatically"
+        },
+        {
+            "id": "create-util-test",
+            "name": "Create Test for New Utility",
+            "description": "Each new utility should have a corresponding test file",
+            "filePattern": "utils/.+\\.(ts|tsx)$",
+            "antiPattern": ".+test\\.(ts|tsx)$",
+            "fixCommand": "npm run generate-test {filePath}",
+            "severity": "error",
+            "message": "Create a test file for this utility using 'npm run generate-test {filePath}' to generate a test file automatically"
         }
     ]
 }

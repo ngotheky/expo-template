@@ -125,7 +125,6 @@ These rules do NOT check existing code in your codebase - they guide the AI to f
 -   **App Config Structure**: Check app.config.ts/app.json structure
 -   **Expo Vector Icons**: Use @expo/vector-icons for icons
 -   **Expo Status Bar**: Use expo-status-bar instead of StatusBar from react-native
--   **Expo Notifications**: Use expo-notifications for push notifications
 -   **Expo Dev Client**: Use expo-dev-client for development builds
 -   **Expo English Comments**: Expo-related comments must be in English
 -   **Base Component Documentation**: Base components should have JSDoc documentation
@@ -145,6 +144,8 @@ These rules do NOT check existing code in your codebase - they guide the AI to f
 -   **No Direct Numeral Usage**: Don't use numeral directly except in formatter.ts
 -   **Avoid Recoil**: Don't use Recoil, prefer Zustand
 -   **English Comments**: All comments must be in English
+-   **Create Test for New Component**: Each new component should have a corresponding test file
+-   **Create Test for New Utility**: Each new utility should have a corresponding test file
 
 ## How to Use
 
