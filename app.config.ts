@@ -15,10 +15,10 @@ module.exports = ({ config }: ConfigContext) => {
     return {
         ...config,
         name: process.env.APP_NAME,
-        slug: process.env.APP_SLUG,
+        slug: process.env.SLUG,
         orientation: 'portrait',
         icon: './assets/images/icon.png',
-        scheme: process.env.APP_SLUG,
+        scheme: process.env.SLUG,
         userInterfaceStyle: 'automatic',
         newArchEnabled: true,
         runtimeVersion: '1.0.0',

@@ -187,5 +187,116 @@ Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_
 -   [`yup`](https://github.com/jquense/yup)
 -   [`zustand`](https://docs.pmnd.rs/zustand/getting-started/introduction)
 -   [`tailwindcss`](https://tailwindcss.com/)
+-   [`jest-expo`](https://github.com/expo/expo/tree/main/packages/jest-expo/)
+
+## Công Nghệ Sử Dụng
+
+### Core Technologies
+
+-   **React Native**: Phiên bản 0.76.3 - Framework để phát triển ứng dụng di động đa nền tảng
+-   **Expo**: Phiên bản 52.0.11 - Bộ công cụ phát triển và triển khai React Native
+-   **TypeScript**: Phiên bản 5.3.3 - Ngôn ngữ lập trình static type-checking dựa trên JavaScript
+-   **Expo Router**: Phiên bản 3.1.0 - File-based routing cho ứng dụng Expo
+
+### State Management & Networking
+
+-   **Zustand**: Quản lý state nhỏ gọn, nhanh chóng và mạnh mẽ
+-   **React Query**: Quản lý, cache và đồng bộ hóa state từ server
+
+### UI & Styling
+
+-   **NativeWind**: Dùng Tailwind CSS trong React Native
+-   **Tailwind CSS**: Phiên bản 4.0.0 - Framework CSS tiện ích để tạo UI nhanh chóng
+
+### Form & Validation
+
+-   **React Hook Form**: Quản lý form hiệu quả với ít render
+-   **Yup**: Bộ xác thực giá trị và parse đối tượng
+
+### Notification & Services
+
+-   **OneSignal**: Dịch vụ push notification đa nền tảng
+-   **Expo Updates**: Over-the-air updates không cần phát hành app mới
+-   **Expo Location**: Dịch vụ định vị địa lý
+
+### Testing
+
+-   **Jest**: Framework testing cho JavaScript
+-   **React Testing Library**: Thư viện testing cho React và React Native
+
+## Directory Structure
+
+```
+based-expo/
+├── app/                         # Expo Router-based application code
+│   ├── (main)/                  # Main application screens
+│   │   ├── home/                # Home screen components & logic
+│   │   ├── message/             # Message/chat screens
+│   │   ├── my-page/             # User profile pages
+│   │   ├── notification/        # Notification screens
+│   │   ├── settings/            # App settings screens
+│   │   └── _layout.tsx          # Layout for main app screens
+│   ├── auth/                    # Authentication screens
+│   ├── profile/                 # Profile related screens
+│   ├── _layout.tsx              # Root layout component
+│   ├── +not-found.tsx           # 404 page
+│   └── loading.tsx              # Loading screen
+│
+├── api/                         # API integration and services
+│   ├── modules/                 # API endpoints organized by modules
+│   ├── interface/               # API interface definitions
+│   └── request.ts               # Base API request configuration
+│
+├── assets/                      # Static assets like images, fonts
+│
+├── components/                  # Reusable UI components
+│   ├── base/                    # Base/foundation components
+│   └── __tests__/               # Component tests
+│
+├── hooks/                       # Custom React hooks
+│   ├── usePaging.ts             # Pagination hook
+│   └── useNotification.ts       # Notification management hook
+│
+├── provider/                    # React Context providers
+│   └── index.tsx                # Main provider component
+│
+├── stacks/                      # Navigation stacks
+│
+├── store/                       # State management (Zustand)
+│   ├── useUserProfile.ts        # User profile state
+│   ├── useLanguage.ts           # Language settings state
+│   └── configs.ts               # Store configuration
+│
+├── types/                       # TypeScript types/interfaces
+│   ├── enums.ts                 # Enum definitions
+│   ├── general.ts               # General type definitions
+│   ├── notification.ts          # Notification-related types
+│   └── user.ts                  # User-related types
+│
+├── utils/                       # Utility functions
+│   ├── constants.ts             # Application constants
+│   ├── date.ts                  # Date manipulation utilities
+│   ├── formatter.ts             # Data formatting utilities
+│   ├── helper.ts                # General helper functions
+│   ├── i18next.ts               # i18n configuration
+│   ├── logger.ts                # Logging utilities
+│   ├── metrics.ts               # Metrics and analytics helpers
+│   ├── permission.ts            # Permission handling utilities
+│   ├── validate.ts              # Validation helpers
+│   ├── yupValidate.ts           # Yup validation schemas
+│   └── upload/                  # File upload utilities
+│
+├── __mocks__/                   # Mock files for testing
+├── __tests__/                   # Test files
+├── credentials/                 # Build credentials
+│
+├── app.config.ts                # Expo configuration file
+├── babel.config.js              # Babel configuration
+├── eas.json                     # EAS Build configuration
+├── global.css                   # Global styles
+├── package.json                 # Project dependencies
+├── tailwind.config.js           # Tailwind CSS configuration
+└── tsconfig.json                # TypeScript configuration
+```
 
 ---
