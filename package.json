@@ -25,7 +25,7 @@
         "push-staging": "NODE_ENV=staging eas update --channel staging",
         "push-prod": "NODE_ENV=production eas update --channel production",
         "android": "expo run:android",
-        "generate-keystore-prod": "cp .env.production .env && eas credentials",
+        "generate-keystore": "bash scripts/create-keystore.sh",
         "ios": "expo run:ios",
         "web": "expo start --web",
         "test": "jest --watch --coverage=false --changedSince=origin/main",

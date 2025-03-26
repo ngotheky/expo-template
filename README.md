@@ -62,15 +62,7 @@ npm install -g eas-cli
 
 ### Cho Android
 
-1. Chạy script `generate-keychain-prod`.
-2. Select platform `Android`.
-3. Chọn profile `production`.
-4. Chọn `Keystore: Manage everything needed to build your project`.
-5. Chọn `Set up a new keystore` và bấm enter để tạo keystore.
-6. Sau khi tạo xong bấm enter, chọn `Go back` để quay lại menu `credentials`.
-7. Chọn `credentials.json: Upload/Download credentials between EAS servers and your local json`.
-8. Chọn `Download credentials from EAS to credentials.json` để tải keystore về, keystore sẽ tự động thêm vào folder `credentials` và cũng tự update thông tin vào file `credentials.json`.
-9. Bấm enter để quay lại menu, chọn `Upload credentials from credentials.json to EAS` để upload keystore lên EAS.
+Chạy script `generate-keystore`
 
 ---
 
