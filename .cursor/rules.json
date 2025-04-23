@@ -1,0 +1,67 @@
+{
+    "version": "1.0.0",
+    "enabled": true,
+    "rules": [
+        {
+            "path": "rules/component.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/hooks.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/styling.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/typescript.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/testing.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/naming.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/folder-naming.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/library-usage.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/expo.rule.json",
+            "enabled": true
+        },
+        {
+            "path": "rules/common.rule.json",
+            "enabled": true
+        }
+    ],
+    "settings": {
+        "showInEditor": true,
+        "underlineIssues": true,
+        "showStatusBarIcon": true,
+        "severityColors": {
+            "error": "#ff5555",
+            "warning": "#ffaa00",
+            "suggestion": "#44aaff"
+        },
+        "enableOnSave": true,
+        "enableOnChange": true,
+        "notificationsEnabled": true,
+        "excludePatterns": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.expo/**",
+            "**/coverage/**"
+        ]
+    }
+}

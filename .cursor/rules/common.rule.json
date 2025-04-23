@@ -1,0 +1,144 @@
+{
+    "name": "Common Rules",
+    "description": "General rules for code quality and best practices",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "use-react-query",
+            "name": "Use React Query for API Calls",
+            "description": "Use React Query (TanStack Query) for API calls instead of direct fetch or axios calls",
+            "pattern": "import\\s+.*?from\\s+['\"]@tanstack/react-query['\"]|import\\s+.*?from\\s+['\"]react-query['\"]|useQuery\\(|useMutation\\(|useInfiniteQuery\\(|useQueryClient\\(",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Use React Query for API calls for better caching, retries, and request state management"
+        },
+        {
+            "id": "avoid-direct-api-calls",
+            "name": "Avoid Direct API Calls",
+            "description": "Avoid direct API calls with fetch or axios in components",
+            "pattern": "fetch\\s*\\(|axios\\s*\\.",
+            "filePattern": "components/.+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Avoid direct API calls in components, use React Query instead"
+        },
+        {
+            "id": "use-zustand",
+            "name": "Use Zustand for Global State",
+            "description": "Use Zustand for global state management instead of other state managers",
+            "pattern": "import\\s+.*?from\\s+['\"]zustand['\"]|create\\w*Store\\(|useStore\\(",
+            "filePattern": "store/.+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Use Zustand for global state management"
+        },
+        {
+            "id": "avoid-redux",
+            "name": "Avoid Redux",
+            "description": "Avoid using Redux in favor of Zustand",
+            "pattern": "import\\s+.*?from\\s+['\"]redux['\"]|import\\s+.*?from\\s+['\"]@reduxjs/toolkit['\"]|import\\s+.*?from\\s+['\"]react-redux['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Avoid using Redux, use Zustand for global state management instead"
+        },
+        {
+            "id": "use-base-components",
+            "name": "Use Base Components",
+            "description": "Prioritize using base components instead of directly using React Native components",
+            "pattern": "import\\s+\\{\\s*(?!.*?Button).*?\\}\\s+from\\s+['\"]react-native['\"]|<(View|Text|Image|TouchableOpacity|TextInput|FlatList)\\s",
+            "filePattern": "(?!components/base).+\\.(tsx|jsx)$",
+            "severity": "suggestion",
+            "message": "Prioritize using base components from your component library instead of direct React Native components"
+        },
+        {
+            "id": "no-direct-formatting-in-components",
+            "name": "No Direct Formatting in Components",
+            "description": "Do not use direct formatting functions in components",
+            "pattern": "\\.(toLocaleString|toFixed|toString\\(\\)|toLocaleDateString|toDateString|toUTCString|toISOString|toTimeString)\\(|format\\(|new\\s+Date\\(\\)",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "severity": "warning",
+            "message": "Do not use direct formatting in components, use formatter utilities instead"
+        },
+        {
+            "id": "no-formatting-lib-imports",
+            "name": "No Direct Formatting Library Imports",
+            "description": "Do not import formatting libraries directly except in formatter.ts and date.ts",
+            "pattern": "import\\s+.*?from\\s+['\"]dayjs['\"]|import\\s+.*?from\\s+['\"]moment['\"]|import\\s+.*?from\\s+['\"]numeral['\"]|import\\s+.*?from\\s+['\"]date-fns['\"]|import\\s+.*?from\\s+['\"]luxon['\"]|import\\s+.*?from\\s+['\"]accounting['\"]|import\\s+.*?from\\s+['\"]currency\\.js['\"]|import\\s+.*?from\\s+['\"]numbro['\"]",
+            "filePattern": "(?!.*/(formatter|date)\\.ts$).+\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Do not import formatting libraries directly. Use formatter.ts for data formatting and date.ts for date formatting."
+        },
+        {
+            "id": "use-formatters",
+            "name": "Use Formatter Utilities",
+            "description": "Use formatters from the formatter utility files",
+            "pattern": "import\\s+.*?from\\s+['\"].*?/formatters['\"]|import\\s+.*?from\\s+['\"].*?/formatter['\"]|import\\s+.*?from\\s+['\"].*?/utils/format['\"]",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "suggestion",
+            "message": "Use formatter utilities for data formatting"
+        },
+        {
+            "id": "use-date-utilities",
+            "name": "Use Date Utilities",
+            "description": "Use date utilities for date formatting and manipulation",
+            "pattern": "import\\s+.*?from\\s+['\"].*?/dates['\"]|import\\s+.*?from\\s+['\"].*?/date['\"]|import\\s+.*?from\\s+['\"].*?/utils/date['\"]",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "suggestion",
+            "message": "Use date utilities for date formatting and manipulation"
+        },
+        {
+            "id": "no-dayjs-usage",
+            "name": "No Direct Dayjs Usage",
+            "description": "Do not use dayjs directly except in date.ts",
+            "pattern": "dayjs\\s*\\(",
+            "filePattern": "(?!.*date\\.ts$).+\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Do not use dayjs directly. Import and use functions from date.ts instead."
+        },
+        {
+            "id": "no-numeral-usage",
+            "name": "No Direct Numeral Usage",
+            "description": "Do not use numeral directly except in formatter.ts",
+            "pattern": "numeral\\s*\\(",
+            "filePattern": "(?!.*formatter\\.ts$).+\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "Do not use numeral directly. Import and use functions from formatter.ts instead."
+        },
+        {
+            "id": "avoid-recoil",
+            "name": "Avoid Recoil",
+            "description": "Avoid using Recoil in favor of Zustand",
+            "pattern": "import\\s+.*?from\\s+['\"]recoil['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Avoid using Recoil, use Zustand for global state management instead"
+        },
+        {
+            "id": "common-english-comments",
+            "name": "English Comments",
+            "description": "All comments must be in English",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
+            "severity": "warning",
+            "message": "Comments must be written in English for better team collaboration"
+        },
+        {
+            "id": "create-component-test",
+            "name": "Create Test for New Component",
+            "description": "Each new component should have a corresponding test file",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "antiPattern": ".+test\\.(tsx|jsx)$",
+            "fixCommand": "npm run generate-test {filePath}",
+            "severity": "error",
+            "message": "Create a test file for this component using 'npm run generate-test {filePath}' to generate a test file automatically"
+        },
+        {
+            "id": "create-util-test",
+            "name": "Create Test for New Utility",
+            "description": "Each new utility should have a corresponding test file",
+            "filePattern": "utils/.+\\.(ts|tsx)$",
+            "antiPattern": ".+test\\.(ts|tsx)$",
+            "fixCommand": "npm run generate-test {filePath}",
+            "severity": "error",
+            "message": "Create a test file for this utility using 'npm run generate-test {filePath}' to generate a test file automatically"
+        }
+    ]
+}

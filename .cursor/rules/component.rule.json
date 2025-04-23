@@ -1,0 +1,70 @@
+{
+    "name": "Component Rule",
+    "description": "Rules for creating and using components",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "component-naming",
+            "name": "Component Naming",
+            "description": "Components must be named using PascalCase",
+            "pattern": "^[A-Z][a-zA-Z0-9]*$",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "severity": "error",
+            "message": "Component names must use PascalCase (e.g., Button, UserProfile)"
+        },
+        {
+            "id": "component-export",
+            "name": "Component Export",
+            "description": "Components should be exported using named exports",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "pattern": "export\\s+const\\s+[A-Z][a-zA-Z0-9]*\\s*=",
+            "severity": "warning",
+            "message": "Components should use named exports: export const ComponentName = ..."
+        },
+        {
+            "id": "component-props-interface",
+            "name": "Component Props Interface",
+            "description": "Components should have an interface or type for props",
+            "filePattern": "components/.+\\.(tsx)$",
+            "pattern": "(interface|type)\\s+[A-Z][a-zA-Z0-9]*Props",
+            "severity": "warning",
+            "message": "Components should have an interface or type for props"
+        },
+        {
+            "id": "memo-for-complex-components",
+            "name": "Use memo for complex components",
+            "description": "Complex components should use React.memo for performance optimization",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "pattern": "React\\.memo|memo\\(",
+            "severity": "suggestion",
+            "message": "Consider using React.memo() for complex components"
+        },
+        {
+            "id": "base-component-documentation",
+            "name": "Base Component Documentation",
+            "description": "Base components should have JSDoc documentation",
+            "filePattern": "components/(?!.*/).+\\.(tsx|jsx)$",
+            "pattern": "/\\*\\*[\\s\\S]*?\\*/\\s*export|//\\s*[A-Za-z0-9\\s]+\\s*\\n\\s*export",
+            "severity": "warning",
+            "message": "Base components should have JSDoc documentation explaining their purpose and props"
+        },
+        {
+            "id": "english-comments-only",
+            "name": "English Comments Only",
+            "description": "All comments must be written in English",
+            "filePattern": "components/.+\\.(tsx|jsx|ts|js)$",
+            "pattern": "//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*|/\\*[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*\\*/",
+            "severity": "warning",
+            "message": "Comments must be written in English for better team collaboration"
+        },
+        {
+            "id": "component-jsdoc-format",
+            "name": "Component JSDoc Format",
+            "description": "Component JSDoc should follow standard format with @param and @returns tags",
+            "filePattern": "components/.+\\.(tsx|jsx)$",
+            "pattern": "/\\*\\*[\\s\\S]*?(@param|@returns)[\\s\\S]*?\\*/",
+            "severity": "suggestion",
+            "message": "Component JSDoc should include @param tags for props and @returns for what the component renders"
+        }
+    ]
+}

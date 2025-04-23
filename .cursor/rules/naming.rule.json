@@ -1,0 +1,79 @@
+{
+    "name": "Naming Rules",
+    "description": "Rules for naming variables, functions, and files",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "camelcase-variables",
+            "name": "CamelCase Variables",
+            "description": "Variables must be named using camelCase",
+            "pattern": "const\\s+[a-z][a-zA-Z0-9]*\\s*=|let\\s+[a-z][a-zA-Z0-9]*\\s*=|var\\s+[a-z][a-zA-Z0-9]*\\s*=",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Variables should be named using camelCase (e.g., userName, isLoading)"
+        },
+        {
+            "id": "constants-uppercase",
+            "name": "Constants Uppercase",
+            "description": "Constants should be named using UPPERCASE",
+            "pattern": "const\\s+[A-Z][A-Z0-9_]*\\s*=",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Constants should be named using UPPERCASE (e.g., API_URL, MAX_ATTEMPTS)"
+        },
+        {
+            "id": "pascalcase-components",
+            "name": "PascalCase Components",
+            "description": "Components must be named using PascalCase",
+            "pattern": "function\\s+[A-Z][a-zA-Z0-9]*\\s*\\(|const\\s+[A-Z][a-zA-Z0-9]*\\s*=\\s*\\(|class\\s+[A-Z][a-zA-Z0-9]*",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "error",
+            "message": "Components must be named using PascalCase (e.g., Button, UserProfile)"
+        },
+        {
+            "id": "specific-names",
+            "name": "Specific and Clear Names",
+            "description": "Names should be specific and clear about their purpose",
+            "pattern": "const\\s+(data|result|res|temp|tmp|val|value|arr|obj|item|element|e)\\s*=|let\\s+(data|result|res|temp|tmp|val|value|arr|obj|item|element|e)\\s*=",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Avoid generic names (e.g., data, result, res, temp), use specific and purpose-indicating names"
+        },
+        {
+            "id": "function-verb",
+            "name": "Function Names Start with Verb",
+            "description": "Function names should start with a verb",
+            "pattern": "function\\s+(get|set|fetch|update|create|delete|handle|process|validate|check|is|has|should|can)[A-Z]|const\\s+[a-z]*\\s*=\\s*\\(.*\\)\\s*=>|const\\s+(get|set|fetch|update|create|delete|handle|process|validate|check|is|has|should|can)[A-Z][a-zA-Z0-9]*\\s*=",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Function names should start with a verb (e.g., getUser, handleClick, validateInput)"
+        },
+        {
+            "id": "boolean-prefix",
+            "name": "Boolean Variable Prefix",
+            "description": "Boolean variables should start with is, has, can, or should",
+            "pattern": "(const|let|var)\\s+(is|has|can|should)[A-Z][a-zA-Z0-9]*\\s*=|:\\s*boolean",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Boolean variables should start with is, has, can, or should (e.g., isLoading, hasError)"
+        },
+        {
+            "id": "array-plural",
+            "name": "Array Names Plural",
+            "description": "Array names should be plural",
+            "pattern": ":\\s*\\w+\\[\\]|const\\s+\\w+s\\s*=\\s*\\[|const\\s+\\w+List\\s*=\\s*\\[",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Array names should be plural (e.g., users, items) or have a descriptive suffix (userList, itemArray)"
+        },
+        {
+            "id": "english-identifiers",
+            "name": "English Identifiers",
+            "description": "All identifiers must be in English",
+            "pattern": "const\\s+[^a-zA-Z0-9_$]|let\\s+[^a-zA-Z0-9_$]|var\\s+[^a-zA-Z0-9_$]|function\\s+[^a-zA-Z0-9_$]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "All identifiers (variables, functions, classes) must be named in English"
+        }
+    ]
+}

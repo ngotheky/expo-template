@@ -10,6 +10,10 @@ export const checkCamera = async () => {
     if (status === PermissionStatus.GRANTED) {
         return true;
     }
+    if (status === PermissionStatus.UNDETERMINED) {
+        showRequestPermission('camera');
+        return false;
+    }
     const { status: newStatus } = await Camera.requestCameraPermissionsAsync();
     return newStatus === PermissionStatus.GRANTED;
 };

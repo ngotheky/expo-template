@@ -1,0 +1,79 @@
+{
+    "name": "Library Usage Rules",
+    "description": "Rules for using libraries and generating code",
+    "version": "1.0.0",
+    "rules": [
+        {
+            "id": "use-installed-libraries",
+            "name": "Use Installed Libraries",
+            "description": "Prioritize using libraries already installed in the project",
+            "pattern": "import\\s+.*?from\\s+['\"](?!@[^/]+/|\\.|react|react-native|expo|@expo)([@a-zA-Z0-9-]+)['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "warning",
+            "message": "Check if this library is already installed in package.json before using it"
+        },
+        {
+            "id": "prefer-expo-libraries",
+            "name": "Prefer Expo Libraries",
+            "description": "Prefer using Expo libraries when possible",
+            "pattern": "import\\s+.*?from\\s+['\"](?!expo|@expo)(@react-native-community|react-native-[a-zA-Z0-9-]+)['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Prefer using Expo libraries (@expo) when possible instead of React Native Community libraries"
+        },
+        {
+            "id": "check-before-install",
+            "name": "Check Before Install",
+            "description": "Check before installing new libraries",
+            "pattern": "npm\\s+install|yarn\\s+add|pnpm\\s+add|npx\\s+expo\\s+install",
+            "filePattern": ".+\\.(md|txt)$",
+            "severity": "suggestion",
+            "message": "Before installing a new library, check if the project already has a similar library"
+        },
+        {
+            "id": "expo-install-syntax",
+            "name": "Expo Install Syntax",
+            "description": "Use 'npx expo install' instead of npm/yarn to install libraries",
+            "pattern": "npm\\s+install|yarn\\s+add",
+            "filePattern": ".+\\.(md|txt)$",
+            "severity": "warning",
+            "message": "Use 'npx expo install' instead of npm/yarn to automatically select versions compatible with Expo SDK"
+        },
+        {
+            "id": "comment-library-purpose",
+            "name": "Comment Library Purpose",
+            "description": "Add comments explaining the purpose of new libraries",
+            "pattern": "import\\s+.*?from\\s+['\"](?!\\.|react|react-native|expo|@expo/vector-icons|@expo/[@a-zA-Z0-9-/]+)([@a-zA-Z0-9-/]+)['\"]",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "suggestion",
+            "message": "Add a comment explaining the purpose of the new library when importing it"
+        },
+        {
+            "id": "prompt-install-missing",
+            "name": "Prompt Install Missing",
+            "description": "Display prompt when using a library that is not installed",
+            "pattern": "// TODO: Install package",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "severity": "error",
+            "message": "This library is not installed. Use 'npx expo install' to install it before using it."
+        },
+        {
+            "id": "auto-generate-imports",
+            "name": "Auto Generate Imports",
+            "description": "Automatically add import statements when using components",
+            "pattern": "<(?!View|Text|Image|ScrollView|FlatList|TouchableOpacity|TextInput|Button|StyleSheet|SafeAreaView|StatusBar)([A-Z][a-zA-Z0-9]+)",
+            "filePattern": ".+\\.(tsx|jsx)$",
+            "severity": "suggestion",
+            "message": "Automatically add import statement when using a new component"
+        },
+        {
+            "id": "english-library-comments",
+            "name": "English Library Comments",
+            "description": "Library-related comments must be in English",
+            "filePattern": ".+\\.(ts|tsx|js|jsx)$",
+            "pattern": "import.*?//[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*[\\p{L}\\p{M}]+[^a-zA-Z0-9\\s`'\"\\-_=+!@#$%^&*()\\[\\]{}|:;<>,.?/\\\\]*",
+            "severity": "warning",
+            "message": "Library-related comments must be written in English"
+        }
+    ]
+}

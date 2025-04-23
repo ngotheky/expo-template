@@ -20,7 +20,8 @@ const yupValidate = {
             .trim(i18next.t('error.trimSpace'))
             .strict(true)
             .min(USERNAME_MIN_LENGTH, i18next.t('error.nameLength'))
-            .max(USERNAME_MAX_LENGTH, i18next.t('error.nameLength')),
+            .max(USERNAME_MAX_LENGTH, i18next.t('error.nameLength'))
+            .matches(/^[a-zA-Z0-9]+$/, i18next.t('error.nameLength')),
 
     email: () =>
         yup
@@ -46,14 +47,14 @@ const yupValidate = {
         if (ref) {
             // NEW PASSWORD
             if (!isMatchCurrentPassword) {
-                return yupValidate.password().not([yup.ref(ref), null], i18next.t('error.duplicatePassword'));
+                return yupValidate.password().notOneOf([ref], i18next.t('error.duplicatePassword'));
             }
 
             // CONFIRM PASSWORD
             return yup
                 .string()
                 .required(() => requireField('passwordConfirm'))
-                .oneOf([yup.ref(ref), ''], i18next.t('error.passwordNotMatch'));
+                .oneOf([ref], i18next.t('error.passwordNotMatch'));
         }
 
         return yup
@@ -68,6 +69,7 @@ const yupValidate = {
     birthday: () => yup.string().required(() => requireField('birthday')),
     labelPicker: () => yup.string().required(() => requireField('labelPicker')),
     policy: () => yup.string().required(() => requireField('policy')),
+    postalCode: () => yup.string().required(() => requireField('postalCode')),
 };
 
 export default yupValidate;
