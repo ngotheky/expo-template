@@ -1,7 +1,7 @@
 export const REGEX_EMAIL =
     /^(([^<>()[\]\\x.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const REGEX_PHONE = /^(\+?\d{1,4})?[-. ]?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-export const REGEX_PASSWORD = /^[aA-zZ0-9]+$/;
+export const REGEX_PASSWORD = /^[a-zA-Z0-9]+$/;
 export const REGEX_KATAKANA = /^[\u30A0-\u30FF\u3005]+$/i;
 
 export const USERNAME_MIN_LENGTH = 5;

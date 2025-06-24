@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -170,7 +170,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,26 +180,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,7 +247,7 @@ interface Props extends Omit&lt;ReactNativeModalDateTimePickerProps, 'isVisible'
  *
  * @returns {JSX.Element} The rendered date-time picker component.
  */
-const StyledDateTimePicker: FunctionComponent&lt;Props&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
+const StyledDateTimePicker: FunctionComponent&lt;Props&gt; = ({
     date,
     className,
     disabled,
@@ -257,26 +257,26 @@ const StyledDateTimePicker: FunctionComponent&lt;Props&gt; = <span class="cstat-
     onConfirm,
     ...res
 }: Props) =&gt; {
-    const [isVisible, setIsVisible] = <span class="cstat-no" title="statement not covered" >useState&lt;boolean&gt;(false);</span>
-    const { t } = <span class="cstat-no" title="statement not covered" >useTranslation();</span>
-    const closePicker = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setIsVisible(false);</span>
-<span class="cstat-no" title="statement not covered" >        onCancel?.();</span>
+    const [isVisible, setIsVisible] = useState&lt;boolean&gt;(false);
+    const { t } = useTranslation();
+    const closePicker = () =&gt; {
+        setIsVisible(false);
+        onCancel?.();
     };
 &nbsp;
-    const openPicker = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setIsVisible(true);</span>
+    const openPicker = () =&gt; {
+        setIsVisible(true);
     };
 &nbsp;
-    const onChangeValue = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewDate: Date) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (formatter) {</span>
-<span class="cstat-no" title="statement not covered" >            onConfirm(formatter(newDate));</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+    const onChangeValue = (newDate: Date) =&gt; {
+        if (formatter) {
+            onConfirm(formatter(newDate));
+            return;
         }
-<span class="cstat-no" title="statement not covered" >        onConfirm(newDate);</span>
+        onConfirm(newDate);
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;StyledTouchable disabled={disabled} onPress={openPicker} className={className}&gt;
             {children}
             &lt;DateTimePickerModal
@@ -301,7 +301,7 @@ export default StyledDateTimePicker;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-26T08:43:23.050Z
+                at 2025-06-24T08:22:56.515Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

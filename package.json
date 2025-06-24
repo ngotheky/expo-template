@@ -140,19 +140,7 @@
             "^@/(.*)$": "<rootDir>/$1"
         },
         "testPathIgnorePatterns": [
-            "<rootDir>/node_modules/",
-            "<rootDir>/components/__tests__/base/StyledImage.test.tsx",
-            "<rootDir>/components/__tests__/base/modal/ModalizeManager.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledTouchable.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledNoData.test.tsx",
-            "<rootDir>/components/__tests__/base/CheckBox.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledButton.test.tsx",
-            "<rootDir>/components/__tests__/index.test.tsx",
-            "<rootDir>/components/__tests__/base/RadioButton.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledInput.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledList.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledIcon.test.tsx",
-            "<rootDir>/components/__tests__/base/StyledIndicator.test.tsx"
+            "<rootDir>/node_modules/"
         ],
         "collectCoverageFrom": [
             "**/*.{ts,tsx,js,jsx}",

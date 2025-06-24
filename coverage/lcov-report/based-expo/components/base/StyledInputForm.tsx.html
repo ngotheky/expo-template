@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -224,8 +224,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -236,34 +236,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -348,46 +348,46 @@ interface FormInputProps extends StyledInputProps {
     checkBoxProps?: ICheckBox;
 }
 &nbsp;
-const StyledInputForm = <span class="cstat-no" title="statement not covered" >forwardRef(<span class="fstat-no" title="function not covered" >(p</span>rops: FormInputProps, ref: any) =&gt; {</span>
-    const { t } = <span class="cstat-no" title="statement not covered" >useTranslation();</span>
+const StyledInputForm = forwardRef((props: FormInputProps, ref: any) =&gt; {
+    const { t } = useTranslation();
     const {
         name,
         rules,
-        defaultValue = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
+        defaultValue = '',
         onChangeText,
-        InputComponent = <span class="branch-0 cbranch-no" title="branch not covered" >StyledInput,</span>
+        InputComponent = StyledInput,
         form,
-        dynamicOnChangeName = <span class="branch-0 cbranch-no" title="branch not covered" >'onChangeText',</span>
+        dynamicOnChangeName = 'onChangeText',
         checkBoxProps,
         ...inputProps
-    } = <span class="cstat-no" title="statement not covered" >props;</span>
-    const formContext = <span class="cstat-no" title="statement not covered" >useFormContext();</span>
+    } = props;
+    const formContext = useFormContext();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!(formContext || form)) {</span>
-<span class="cstat-no" title="statement not covered" >        logger(t('error.inputComponent'), true, '');</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;InputComponent errorMessage={'error.inputComponent'} {...inputProps} editable={false} /&gt;;</span>
+    if (!(formContext || form)) {
+        logger(t('error.inputComponent'), true, '');
+        return &lt;InputComponent errorMessage={'error.inputComponent'} {...inputProps} editable={false} /&gt;;
     }
 &nbsp;
-    const { control } = <span class="cstat-no" title="statement not covered" >formContext || form;</span>
-    const customInputProps = <span class="cstat-no" title="statement not covered" >checkBoxProps || inputProps;</span>
+    const { control } = formContext || form;
+    const customInputProps = checkBoxProps || inputProps;
 &nbsp;
-    const onChangeInput = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(t</span>ext: string, onChangeControl: any) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        onChangeText ? onChangeText(text) : onChangeControl(text);</span>
+    const onChangeInput = (text: string, onChangeControl: any) =&gt; {
+        onChangeText ? onChangeText(text) : <span class="branch-1 cbranch-no" title="branch not covered" >onChangeControl(text);</span>
     };
 &nbsp;
-    const renderBaseInput = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> field: { onChange, value }, fieldState: { error } }: IParamsRender) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
+    const renderBaseInput = ({ field: { onChange, value }, fieldState: { error } }: IParamsRender) =&gt; {
+        return (
             &lt;InputComponent
                 ref={ref}
                 value={value}
                 errorMessage={error?.message}
-                {...{ [dynamicOnChangeName]: <span class="fstat-no" title="function not covered" >(t</span>ext: string) =&gt; <span class="cstat-no" title="statement not covered" >onChangeInput(text, onChange) </span>}}
+                {...{ [dynamicOnChangeName]: (text: string) =&gt; onChangeInput(text, onChange) }}
                 {...customInputProps}
             /&gt;
         );
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;Controller
             control={control}
             name={name as any}
@@ -442,7 +442,7 @@ export default StyledInputForm;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-26T08:43:23.050Z
+                at 2025-06-24T08:22:56.515Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
