@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for provider/index.tsx</title>
+    <title>Code coverage report for components/base/StyledNoData.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">provider</a> index.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/base</a> StyledNoData.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,7 +110,9 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,33 +124,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,53 +137,79 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useFonts } from 'expo-font';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-import * as SplashScreen from 'expo-splash-screen';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { loadLocaleLanguage } from '@/utils/i18next';
-import { addMenuClearAsyncStorage } from '@/utils/helper';
-import { useColorScheme } from 'react-native';
-// import useNotification from '@/hooks/useNotification';
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FunctionComponent } from 'react';
+import { ActivityIndicator, View } from 'react-native';
+import StyledText, { I18Type } from './StyledText';
+import StyledTouchable from './StyledTouchable';
+import classNames from 'classnames';
 &nbsp;
-const queryClient = <span class="cstat-no" title="statement not covered" >new QueryClient();</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >SplashScreen.preventAutoHideAsync();</span>
-&nbsp;
-export default function <span class="fstat-no" title="function not covered" >Provider(</span>{ children }: { children: React.ReactNode }) {
-    const colorScheme = <span class="cstat-no" title="statement not covered" >useColorScheme();</span>
-    const [loaded] = <span class="cstat-no" title="statement not covered" >useFonts({</span>
-        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    });
-    // useNotification();
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (loaded) {</span>
-<span class="cstat-no" title="statement not covered" >            SplashScreen.hideAsync();</span>
-        }
-    }, [loaded]);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        loadLocaleLanguage();</span>
-<span class="cstat-no" title="statement not covered" >        addMenuClearAsyncStorage();</span>
-    }, []);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!loaded) {</span>
-<span class="cstat-no" title="statement not covered" >        return null;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;QueryClientProvider client={queryClient}&gt;
-            &lt;ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}&gt;
-                &lt;StatusBar style="auto" /&gt;
-                {children}
-            &lt;/ThemeProvider&gt;
-        &lt;/QueryClientProvider&gt;
-    );
+interface StyledListNoDataProps {
+    text?: I18Type;
+    canRefresh?: boolean;
+    loading?: boolean;
+    onRefresh?(): any;
+    className?: string;
+    clsText?: string;
+    clsReload?: string;
 }
+&nbsp;
+const StyledNoData: FunctionComponent&lt;StyledListNoDataProps&gt; = ({
+    text,
+    canRefresh,
+    loading,
+    onRefresh,
+    clsReload,
+    clsText,
+    className,
+}: StyledListNoDataProps) =&gt; {
+    return (
+        &lt;View className={classNames('items-center justify-center p-2', className)}&gt;
+            {loading ? (
+                &lt;View className="items-center"&gt;
+                    &lt;ActivityIndicator /&gt;
+                &lt;/View&gt;
+            ) : (
+                &lt;StyledText
+                    i18nText={text || 'common.noData'}
+                    className={classNames('font-[600] text-[14px]  text-center', clsText)}
+                /&gt;
+            )}
+            {!!canRefresh &amp;&amp; !loading ? (
+                &lt;StyledTouchable onPress={onRefresh}&gt;
+                    &lt;StyledText i18nText={'common.reload'} className={classNames('m-3 text-primary', clsReload)} /&gt;
+                &lt;/StyledTouchable&gt;
+            ) : (
+                &lt;View /&gt;
+            )}
+        &lt;/View&gt;
+    );
+};
+&nbsp;
+export default StyledNoData;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -213,14 +219,14 @@ export default function <span class="fstat-no" title="function not covered" >Pro
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2025-06-25T09:03:28.895Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

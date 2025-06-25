@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for provider/index.tsx</title>
+    <title>Code coverage report for assets/themes.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">provider</a> index.tsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">assets</a> themes.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,7 +110,18 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,33 +133,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,53 +148,62 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useFonts } from 'expo-font';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-import * as SplashScreen from 'expo-splash-screen';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { loadLocaleLanguage } from '@/utils/i18next';
-import { addMenuClearAsyncStorage } from '@/utils/helper';
-import { useColorScheme } from 'react-native';
-// import useNotification from '@/hooks/useNotification';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const common = {
+    white: '#fff',
+    transparent: 'transparent',
+    black: '#000',
+    blue: 'blue',
+    placeHolderGray: 'rgba(216, 216, 216, 0.6)',
+    borderInputError: '#ff0000',
+    green: 'green',
+    grey: 'grey',
+};
 &nbsp;
-const queryClient = <span class="cstat-no" title="statement not covered" >new QueryClient();</span>
+const Light = {
+    COLORS: {
+        ...common,
+        primary: '#4287f5',
+        secondary: '#E9ECEF',
+        textPrimary: '#000000',
+        textSecondary: '#607d8b',
+        backgroundModalUpdate: '#323232',
+        backdropModalUpdate: '#00000071',
+        progressUpdateColor: '#28A696',
+    },
+    FONTS: {
+        defaultFont: 'Montserrat-Regular',
+        boldFont: 'Montserrat-SemiBold',
+        thinFont: 'Montserrat-Light',
+    },
+};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >SplashScreen.preventAutoHideAsync();</span>
+const Dark = {
+    colors: {
+        ...common,
+        primary: '#607d8b',
+        secondary: '#607d8b',
+        textPrimary: '#607d8b',
+        textSecondary: '#607d8b',
+    },
+    fonts: {
+        defaultFont: 'Montserrat-Regular',
+        boldFont: 'Montserrat-SemiBold',
+        thinFont: 'Montserrat-Light',
+    },
+};
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Provider(</span>{ children }: { children: React.ReactNode }) {
-    const colorScheme = <span class="cstat-no" title="statement not covered" >useColorScheme();</span>
-    const [loaded] = <span class="cstat-no" title="statement not covered" >useFonts({</span>
-        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    });
-    // useNotification();
+export const Themes = Light;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (loaded) {</span>
-<span class="cstat-no" title="statement not covered" >            SplashScreen.hideAsync();</span>
-        }
-    }, [loaded]);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        loadLocaleLanguage();</span>
-<span class="cstat-no" title="statement not covered" >        addMenuClearAsyncStorage();</span>
-    }, []);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!loaded) {</span>
-<span class="cstat-no" title="statement not covered" >        return null;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;QueryClientProvider client={queryClient}&gt;
-            &lt;ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}&gt;
-                &lt;StatusBar style="auto" /&gt;
-                {children}
-            &lt;/ThemeProvider&gt;
-        &lt;/QueryClientProvider&gt;
-    );
-}
+export const ThemesDark = Dark;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

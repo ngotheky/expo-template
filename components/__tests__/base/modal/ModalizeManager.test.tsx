@@ -1,11 +1,15 @@
 // Mock dependencies
 jest.mock('react-native-root-siblings', () => {
     return class RootSiblings {
-        constructor(element: any, callback: () => void) {
+        constructor(element: any, callback?: () => void) {
             if (callback) callback();
         }
-        update() {}
-        destroy() {}
+        update() {
+            return this;
+        }
+        destroy() {
+            return this;
+        }
     };
 });
 
@@ -119,7 +123,7 @@ describe('ModalizeManager', () => {
         const modalManager = ModalizeManager();
 
         // Should not throw error
-        modalManager.dismiss('non-existent-modal');
+        expect(() => modalManager.dismiss('non-existent-modal')).not.toThrow();
 
         // wait should not be called for non-existent modals
         expect(wait).not.toHaveBeenCalled();

@@ -1,26 +1,28 @@
 // Mock dependencies
 jest.mock('../../base/StyledText', () => {
-    const reactNative = jest.requireActual('react-native');
+    const React = require('react');
     return {
         __esModule: true,
-        default: ({ i18nText, className }: any) => (
-            <reactNative.Text testID="styled-text" className={className}>
-                {i18nText}
-            </reactNative.Text>
-        ),
+        default: (props: any) =>
+            React.createElement('Text', {
+                testID: 'styled-text',
+                ...props,
+                children: props.i18nText,
+            }),
         I18Type: String,
     };
 });
 
 jest.mock('../../base/StyledTouchable', () => {
-    const reactNative = jest.requireActual('react-native');
+    const React = require('react');
     return {
         __esModule: true,
-        default: ({ children, onPress }: any) => (
-            <reactNative.Pressable testID="styled-touchable" onPress={onPress}>
-                {children}
-            </reactNative.Pressable>
-        ),
+        default: (props: any) =>
+            React.createElement('View', {
+                testID: 'styled-touchable',
+                accessible: true,
+                ...props,
+            }),
     };
 });
 
