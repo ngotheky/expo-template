@@ -25,7 +25,7 @@ const ImagePicker = ({ image, setImage, children, className, imageCls, pickerOpt
     const actionSheet = useRef<ActionSheet>(null);
     const [loading, setLoading] = useState(false);
 
-    const options = [t('authen.register.cancel'), t('authen.register.photo'), t('authen.register.camera')];
+    const options = [t('auth.register.cancel'), t('auth.register.photo'), t('auth.register.camera')];
     const showActionSheet = () => {
         actionSheet?.current?.show();
     };

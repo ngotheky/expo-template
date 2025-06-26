@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import StyledTouchable from '../../base/StyledTouchable';
+import StyledTouchable from '@/components/base/StyledTouchable';
 import { Text, TouchableOpacity } from 'react-native';
 
 // Mock lodash throttle

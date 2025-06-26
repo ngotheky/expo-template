@@ -33,7 +33,7 @@ export default function Home() {
             </Link>
             <RadioButton value={1} label="Option 1" isChecked={true} onChange={value => console.log(value)} />
             <StyledDateTimePicker mode="datetime" date={new Date()} onConfirm={value => console.log(value)}>
-                <StyledText className="!text-primary" originValue="Select Date" />
+                <StyledText className="!text-primary" i18nText="common.selectDate" />
             </StyledDateTimePicker>
             <StyledInput
                 label="common.noData"

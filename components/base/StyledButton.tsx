@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { ImageSourcePropType } from 'react-native';
-import { StyledImage, StyledText, StyledTouchable } from '.';
-import { I18Type } from './StyledText';
+import StyledImage from './StyledImage';
+import StyledText, { I18Type } from './StyledText';
+import StyledTouchable, { StyledTouchableProps } from './StyledTouchable';
 import classNames from 'classnames';
-import { StyledTouchableProps } from './StyledTouchable';
 
 interface StyledButtonProps extends StyledTouchableProps {
     title: I18Type;

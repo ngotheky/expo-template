@@ -22,6 +22,7 @@ export default {
         cancel: 'キャンセル',
         confirm: '決定',
         reload: 'リロード',
+        back: '戻る',
         sendOTP: {
             title: '認証コード',
             titleForgotPassword: 'パスワードを忘れた',
@@ -55,8 +56,9 @@ export default {
         setting: '設定',
         myPage: 'マイページ',
     },
-    authen: {
+    auth: {
         login: {
+            title: 'ログイン',
             placeholderEmail: 'メールアドレス',
             placeholderPassword: 'パスワード',
             buttonLogin: 'ログイン',
@@ -76,6 +78,10 @@ export default {
             cancel: 'キャンセル',
         },
         sendEmail: {
+            title: 'パスワードを忘れた',
+            sendButtonTitle: '次へ',
+        },
+        forgotPassword: {
             title: 'パスワードを忘れた',
             sendButtonTitle: '次へ',
         },

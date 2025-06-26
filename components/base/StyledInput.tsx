@@ -79,7 +79,7 @@ const StyledInput = (props: StyledInputProps, ref: any) => {
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     className={classNames(
-                        'w-full rounded-md p-2 bg-secondary border border-transparent',
+                        'w-full rounded-md p-2 dark:bg-bgInputDark bg-bgInputLight text-textLight dark:text-textDark border border-transparent',
                         {
                             'border !border-red-600': !isFocused && !!errorMessage,
                             'border !border-primary': isFocused,

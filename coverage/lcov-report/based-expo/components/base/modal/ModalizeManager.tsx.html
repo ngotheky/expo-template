@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">86.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/45</span>
+                <span class='fraction'>40/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.57% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/14</span>
+                <span class='fraction'>13/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.17% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/39</span>
+                <span class='fraction'>34/40</span>
             </div>
         
             
@@ -183,7 +183,8 @@
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,14 +248,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,7 +263,7 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,6 +276,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
@@ -374,15 +376,15 @@ const ModalizeManager = () =&gt; {
             const arrFilter = modalControl.filter(e =&gt; e.id !== id);
             modalControl = [...arrFilter];
             wait(200).then(() =&gt; {
-                element.destroy();
+                element?.destroy();
             });
         }
     };
 &nbsp;
     const update = (id: any, component: any, props: any) =&gt; {
         const item = modalControl.find(e =&gt; e.id === id);
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (item) {
-            item.element.update(
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (item &amp;&amp; item.element) {
+<span class="cstat-no" title="statement not covered" >            item.element.update(</span>
                 &lt;Modalize ref={modalRef} onClosed={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >dismiss(id)}</span> withHandle={false} {...item.props} {...props}&gt;
                     {component}
                 &lt;/Modalize&gt;,
@@ -393,15 +395,16 @@ const ModalizeManager = () =&gt; {
     const dismissAll = () =&gt; {
         modalControl.forEach(item =&gt; {
             const { element } = item;
-            element?.destroy();
+            element?.destroy?.();
         });
+        modalControl = [];
     };
 &nbsp;
     const destroySpecificId = (id: any) =&gt; {
         const item = modalControl.find(e =&gt; e.id === id);
         <span class="missing-if-branch" title="else path not taken" >E</span>if (item) {
             const { element } = item;
-            element?.destroy();
+            element?.destroy?.();
             // destroy id
             const arrFilter = modalControl.filter(e =&gt; e.id !== id);
             modalControl = [...arrFilter];
@@ -430,7 +433,7 @@ export default ModalizeManager;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-24T08:22:56.515Z
+                at 2025-06-26T08:14:22.967Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

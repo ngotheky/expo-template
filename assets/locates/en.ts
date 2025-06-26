@@ -21,6 +21,7 @@ export default {
         noData: 'No data',
         cancel: 'Cancel',
         confirm: 'Confirm',
+        back: 'Back',
         sendOTP: {
             title: 'Send OTP code',
             titleForgotPassword: 'If you forget your password',
@@ -43,6 +44,7 @@ export default {
             unknown: 'Unknown error.',
             network: 'Network error.',
         },
+        selectDate: 'Select date',
     },
 
     // screens
@@ -53,8 +55,9 @@ export default {
         myPage: 'My Page',
         setting: 'Setting',
     },
-    authen: {
+    auth: {
         login: {
+            title: 'Login',
             placeholderEmail: 'Email address required',
             placeholderPassword: 'Password required',
             buttonLogin: 'Login',

@@ -1,9 +1,11 @@
 import useUserProfile from '@/store/useUserProfile';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function AppStacks() {
     const router = useRouter();
+    const { t } = useTranslation();
     const { token } = useUserProfile();
 
     useEffect(() => {
@@ -34,7 +36,7 @@ export default function AppStacks() {
             <Stack.Screen
                 name="profile"
                 options={{
-                    headerBackTitle: 'Back',
+                    headerBackTitle: t('common.back'),
                 }}
             />
         </Stack>

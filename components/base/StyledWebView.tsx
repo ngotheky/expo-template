@@ -2,7 +2,7 @@ import { memo } from 'react';
 import isEqual from 'react-fast-compare';
 import { ActivityIndicator, View } from 'react-native';
 import { WebView, WebViewProps } from 'react-native-webview';
-import { StyledText } from '.';
+import StyledText from './StyledText';
 
 const StyledWebView = (props: WebViewProps) => {
     return (

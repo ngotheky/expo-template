@@ -5,20 +5,9 @@ jest.mock('@/assets/images', () => ({
     },
 }));
 
-// Mock individual components instead of mocking entire react-native
-jest.mock('react-native/Libraries/Image/Image', () => {
-    const React = require('react');
-    return function MockImage(props: any) {
-        return React.createElement('Image', {
-            testID: 'mock-image',
-            ...props,
-        });
-    };
-});
-
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import StyledImage from '../../base/StyledImage';
+import StyledImage from '@/components/base/StyledImage';
 
 describe('StyledImage Component', () => {
     const testSource = { uri: 'test-image-uri' };

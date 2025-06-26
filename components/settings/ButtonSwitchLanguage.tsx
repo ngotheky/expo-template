@@ -11,7 +11,7 @@ import i18next from 'i18next';
 const ButtonSwitchLanguage = () => {
     const { i18n } = useTranslation();
     const { languageKey, updateLanguageKey } = useLanguage();
-    const buttonPosition = useRef(new Animated.Value(languageKey === 'jp' ? 1 : 36)).current;
+    const buttonPosition = useRef(new Animated.Value(languageKey === 'jp' ? 1 : 35)).current;
     const handlePress = () => {
         const newLanguage = languageKey === 'jp' ? 'en' : 'jp';
         updateLanguageKey(newLanguage);
@@ -19,7 +19,7 @@ const ButtonSwitchLanguage = () => {
         i18n.loadLanguages(newLanguage);
         i18next.addResourceBundle(newLanguage, 'translation', newLanguage === 'en' ? en : jp);
         Animated.timing(buttonPosition, {
-            toValue: languageKey === 'jp' ? 36 : 1,
+            toValue: languageKey === 'jp' ? 35 : 1,
             duration: 300,
             useNativeDriver: true,
         }).start();
