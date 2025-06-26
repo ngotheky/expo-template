@@ -59,21 +59,14 @@ const StyledInput = (props: StyledInputProps, ref: any) => {
         textContentType = 'none',
         wrapClassName,
         onPress,
+        editable = true,
         ...otherProps
     } = props;
 
     return (
         <View className={classNames('w-4/5 mt-4', containerClassName)}>
             {!!label && <StyledText className={labelClassName} i18nText={label} />}
-            <WrapInputComponent
-                className={classNames(
-                    {
-                        'border border-red-600': !isFocused && !!errorMessage,
-                    },
-                    wrapClassName,
-                )}
-                onPress={onPress}
-            >
+            <WrapInputComponent className={classNames(wrapClassName)} onPress={onPress}>
                 <TextInput
                     ref={ref || input}
                     onFocus={() => setIsFocused(true)}
@@ -81,8 +74,9 @@ const StyledInput = (props: StyledInputProps, ref: any) => {
                     className={classNames(
                         'w-full rounded-md p-2 dark:bg-bgInputDark bg-bgInputLight text-textLight dark:text-textDark border border-transparent',
                         {
-                            'border !border-red-600': !isFocused && !!errorMessage,
-                            'border !border-primary': isFocused,
+                            '!border-red-600': !isFocused && !!errorMessage,
+                            '!border-primary': isFocused,
+                            '!bg-[#e8e8e8] dark:!bg-[#000000]': !editable,
                         },
                         className,
                     )}
@@ -93,6 +87,7 @@ const StyledInput = (props: StyledInputProps, ref: any) => {
                     importantForAutofill="yes"
                     autoCorrect={false}
                     returnKeyType={customReturnKeyType}
+                    editable={editable}
                     {...otherProps}
                 />
                 {!!renderRight && (
@@ -102,7 +97,7 @@ const StyledInput = (props: StyledInputProps, ref: any) => {
             {!!errorMessage && (
                 <StyledText
                     i18nText={errorMessage as I18Type}
-                    className={classNames('text-xs text-red-600 ml-1', errorClassName)}
+                    className={classNames('text-xs !text-red-600 ml-1', errorClassName)}
                 />
             )}
         </View>

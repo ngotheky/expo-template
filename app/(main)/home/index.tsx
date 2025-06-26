@@ -25,7 +25,7 @@ export default function Home() {
     });
 
     return (
-        <View className="flex-1 justify-center items-center ">
+        <View className="flex-1 justify-center items-center">
             <StyledText className="dark:!text-red-500" originValue={formatNumber(100000.23934324)} />
             <StyledText className="!text-primary" originValue={formatDate(new Date())} />
             <Link push href="/profile/24" asChild>
@@ -33,8 +33,16 @@ export default function Home() {
             </Link>
             <RadioButton value={1} label="Option 1" isChecked={true} onChange={value => console.log(value)} />
             <StyledDateTimePicker mode="datetime" date={new Date()} onConfirm={value => console.log(value)}>
-                <StyledText className="!text-primary" i18nText="common.selectDate" />
+                <StyledText className="!text-primary" originValue="Select Date" />
             </StyledDateTimePicker>
+            <StyledInput
+                editable={false}
+                label="common.noData"
+                placeholder={t('common.noText')}
+                renderRight={() => {
+                    return <MaterialIcons size={28} name="search" color={'gray'} />;
+                }}
+            />
             <StyledInput
                 label="common.noData"
                 placeholder={t('common.noText')}

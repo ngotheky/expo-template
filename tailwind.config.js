@@ -17,7 +17,7 @@ module.exports = {
                 textDark: 'rgba(255, 255, 255, 0.8)',
                 textLight: '#333',
                 bgInputDark: '#2c2c2e',
-                bgInputLight: '#f5f5f5',
+                bgInputLight: '#ffffff',
                 bgDark: '#1c1c1e',
                 bgLight: '#fff',
                 borderDark: '#2b2b2b',
