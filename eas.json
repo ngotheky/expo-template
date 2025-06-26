@@ -60,9 +60,9 @@
                 "track": "internal"
             },
             "ios": {
-                "appleId": "info@amela.vn",
-                "ascAppId": "6739386927",
-                "appleTeamId": "A934T35MUC"
+                "appleId": "",
+                "ascAppId": "",
+                "appleTeamId": ""
             }
         }
     }
