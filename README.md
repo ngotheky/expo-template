@@ -5,13 +5,13 @@
 Run the following command to init project:
 
 ```bash
-npx create-expo-app app-name --template https://github.com/ngotheky/expo-template
+npx create-expo-app app-name --template @kyngo/expo-template
 ```
 
 Where `app-name` is the project name. For example:
 
 ```bash
-npx create-expo-app my-app --template https://github.com/ngotheky/expo-template
+npx create-expo-app my-app --template @kyngo/expo-template
 ```
 
 ## 2. Create App and .env File
