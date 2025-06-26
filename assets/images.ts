@@ -2,6 +2,10 @@ const Images = {
     icons: {
         selected: require('./icons/ic_select.png'),
         back: require('./icons/ic_back.png'),
+        theme: {
+            light: require('./icons/ic_light_theme.png'),
+            dark: require('./icons/ic_dark_theme.png'),
+        },
         tab: {
             home: require('./icons/ic_home.png'),
             notification: require('./icons/ic_notification.png'),

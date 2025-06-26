@@ -13,12 +13,15 @@ export default {
         updateInstalled: 'Update installed',
     },
     common: {
+        language: 'Language',
+        theme: 'Theme',
         defaultLanguage: 'English',
         close: 'Close',
         noText: 'No text',
         noData: 'No data',
         cancel: 'Cancel',
         confirm: 'Confirm',
+        back: 'Back',
         sendOTP: {
             title: 'Send OTP code',
             titleForgotPassword: 'If you forget your password',
@@ -41,17 +44,20 @@ export default {
             unknown: 'Unknown error.',
             network: 'Network error.',
         },
+        selectDate: 'Select date',
     },
 
     // screens
     tab: {
         home: 'Home',
+        message: 'Message',
         notification: 'Notification',
+        myPage: 'My Page',
         setting: 'Setting',
-        account: 'Account',
     },
-    authen: {
+    auth: {
         login: {
+            title: 'Login',
             placeholderEmail: 'Email address required',
             placeholderPassword: 'Password required',
             buttonLogin: 'Login',

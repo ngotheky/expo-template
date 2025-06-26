@@ -9,6 +9,7 @@ import useLanguage from '@/store/useLanguage';
 import { getLocales } from 'expo-localization';
 
 export type Resource = typeof en & typeof jp;
+export type Language = 'jp' | 'en';
 export const defaultNS = 'translation';
 export const DEFAULT_LANG = 'jp';
 export const resources = {
@@ -29,7 +30,7 @@ export function getLanguage() {
         if (tempLng === 'ja') {
             tempLng = 'jp';
         }
-        const lng = tempLng && listLng.includes(tempLng) ? tempLng : DEFAULT_LANG;
+        const lng: Language = tempLng && listLng.includes(tempLng) ? (tempLng as Language) : DEFAULT_LANG;
         // If you want to use DEFAULT_LANG only, comment above line + uncomment below line
         // const lng = DEFAULT_LANG;
         useLanguage.setState({ languageKey: lng });

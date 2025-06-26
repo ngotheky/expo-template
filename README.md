@@ -1,40 +1,40 @@
-# Config và Build với EAS
+# Config and Build with EAS
 
 ## 1. Init project
 
-Chạy command sau để init project:
+Run the following command to init project:
 
 ```bash
-npx create-expo-app app-name --template https://github.com/ngotheky/expo-template
+npx create-expo-app app-name --template @kyngo/expo-template
 ```
 
-Với `app-name` là tên project. Ví dụ:
+Where `app-name` is the project name. For example:
 
 ```bash
-npx create-expo-app my-app --template https://github.com/ngotheky/expo-template
+npx create-expo-app my-app --template @kyngo/expo-template
 ```
 
-## 2. Tạo App và File .env
+## 2. Create App and .env File
 
-### Tạo 3 App trên Expo Dev
+### Create 3 Apps on Expo Dev
 
-Tạo 3 app trên [Expo Dev](https://expo.dev), mỗi môi trường (development, staging, production) tạo một app riêng.
+Create 3 apps on [Expo Dev](https://expo.dev), one app for each environment (development, staging, production).
 
--   Lý do: Expo giới hạn mỗi project chỉ được build 30 lần/tháng, nên việc tách app giúp môi trường development không ảnh hưởng đến các môi trường khác.
+-   Reason: Expo limits each project to only 30 builds per month, so separating apps helps the development environment not affect other environments.
 
-### Cấu hình Biến Môi Trường
+### Environment Variable Configuration
 
-Điền các thông tin sau vào file `.env` tương ứng với từng môi trường:
+Fill in the following information in the `.env` file corresponding to each environment:
 
 -   `APP_NAME`
 -   `SLUG`
 -   `EXPO_PROJECT_ID`
 -   `EAS_UPDATE_URL`
 
-**Lưu ý:**
+**Note:**
 
--   Expo sẽ tự động sinh ra folder iOS và Android trên server build.
--   Khi đổi tên app, cần tạo lại app mới để tránh lỗi khi build.
+-   Expo will automatically generate iOS and Android folders on the build server.
+-   When changing the app name, you need to create a new app to avoid build errors.
 
 ---
 
@@ -46,110 +46,110 @@ Tạo 3 app trên [Expo Dev](https://expo.dev), mỗi môi trường (developmen
 npm install -g eas-cli
 ```
 
-### Cho iOS
+### For iOS
 
-#### Build với Account Apple Developer
+#### Build with Apple Developer Account
 
-1. Khi chạy script build, đăng nhập vào account Apple Developer để sử dụng credential từ tài khoản.
+1. When running the build script, log in to your Apple Developer account to use credentials from the account.
 
-#### Build với Credential Local
+#### Build with Local Credential
 
-1. Copy file `certificate.p12` và file `.mobileprovision` vào thư mục `credentials`.
+1. Copy the `certificate.p12` file and `.mobileprovision` file to the `credentials` folder.
 
-2. Thêm đường dẫn và password của certificate vào file `credentials.json`.
+2. Add the certificate path and password to the `credentials.json` file.
 
-3. Chạy script `build-local-credential-ios` để build iOS sử dụng credential local.
+3. Run the `build-local-credential-ios` script to build iOS using local credentials.
 
-### Cho Android
+### For Android
 
-Chạy script `generate-keystore`
+Run the `generate-keystore` script
 
 ---
 
 ## 4. Config Auto Submit
 
-### Cho Android
+### For Android
 
-1. Truy cập [Google Cloud Console](https://console.cloud.google.com/).
-2. Vào mục **IAM & Admin** > **Service Account** > **Create Service Account**.
-3. Điền thông tin vào form để tạo service account.
-    - Ở mục **Grant this service account access to project**, chọn role: - **Service Accounts** > **Service Account User**.
+1. Access [Google Cloud Console](https://console.cloud.google.com/).
+2. Go to **IAM & Admin** > **Service Account** > **Create Service Account**.
+3. Fill in the form to create a service account.
+    - In the **Grant this service account access to project** section, select role: - **Service Accounts** > **Service Account User**.
 
-#### Tạo Key
+#### Create Key
 
-1. Chọn **Menu Actions** > **Manage Keys**.
+1. Select **Menu Actions** > **Manage Keys**.
 
-2. Chọn **Add Key** > **Create Key**.
+2. Select **Add Key** > **Create Key**.
 
-3. Đổi tên file JSON tải về thành `play-store.json`, đặt vào thư mục gốc dự án.
+3. Rename the downloaded JSON file to `play-store.json`, place it in the project root directory.
 
-4. Copy email service account.
+4. Copy the service account email.
 
-5. Vào [Google Play Console](https://play.google.com/console), mời email với vai trò admin.
+5. Go to [Google Play Console](https://play.google.com/console), invite the email with admin role.
 
 6. Enable [Google Play Android Developer API](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com).
 
-7. Chạy script `build-and-submit-android-prod` để submit app lên Internal Test (có thể điều chỉnh trong `eas.json`).
+7. Run the `build-and-submit-android-prod` script to submit the app to Internal Test (can be adjusted in `eas.json`).
 
-**Lưu ý:**
+**Note:**
 
--   Submit thủ công một bản đầu tiên trước khi sử dụng EAS submit.
+-   Submit manually for the first time before using EAS submit.
 
-### Cho iOS
+### For iOS
 
-1. Chỉnh sửa thông tin account build trong file `eas.json`.
+1. Edit the build account information in the `eas.json` file.
 
-2. Chạy script `build-and-submit-ios-prod` để submit app lên Testflight.
+2. Run the `build-and-submit-ios-prod` script to submit the app to Testflight.
 
 ## 5. Config EAS (Option)
 
--   Các script build đã được viết sẵn và config trong `eas.json`.
--   Có thể chỉnh sửa hoặc thêm mới các lệnh build theo doc sau: ([Common properties for native platforms](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com))
--   Có thể generate `ios` và `android` folder và build với `Xcode` bằng command sau
+-   Build scripts are already written and configured in `eas.json`.
+-   You can edit or add new build commands according to the following doc: ([Common properties for native platforms](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com))
+-   You can generate `ios` and `android` folders and build with `Xcode` using the following command
 
 ```bash
 npx expo prebuild
 ```
 
--   Có thể build android dưới local mà không cần generate folder android, bằng script `build-android-dev-local`. Sau khi build sẽ tạo ra file build trong project mà không upload lên expo
+-   You can build android locally without generating the android folder, using the `build-android-dev-local` script. After building, it will create a build file in the project without uploading to expo
 
-**Lưu ý:**
+**Note:**
 
--   Hiện tại cả ios và android đều build trên server của expo nên sẽ lâu hơn bình thường
--   Dung lượng build khi build trên server của expo cũng sẽ lớn hơn so với build local
+-   Currently both ios and android are built on expo's server so it will be slower than usual
+-   Build size when building on expo's server will also be larger compared to local builds
 
 ## 6. Configure with app config (`app.config.ts`)
 
--   Có thể thêm/bớt quyền ở mục `permissions`
--   Chỉnh sửa plugins, text xin quyền, splash screen, icon notification ở `plugins`
-    Tham khảo thêm tại ([app.json / app.config.js](https://docs.expo.dev/versions/latest/config/app/))
+-   You can add/remove permissions in the `permissions` section
+-   Edit plugins, permission request text, splash screen, notification icon in `plugins`
+    For more reference see ([app.json / app.config.js](https://docs.expo.dev/versions/latest/config/app/))
 
 ## 7. Eas update (code push)
 
--   Eas update hoạt động giống như code push của `appcenter`
--   App sẽ nhận code mới theo channel được config trong `eas.json`
+-   Eas update works like code push from `appcenter`
+-   The app will receive new code according to the channel configured in `eas.json`
 
 ### Config auto update CI
 
-1. Lấy access token
-   Vào https://expo.dev/settings/access-tokens chọn `Create Token` để tạo access token
+1. Get access token
+   Go to https://expo.dev/settings/access-tokens select `Create Token` to create access token
 
-2. Setting trên git
+2. Setting on git
 
 ### Github
 
-Vào **Settings** > **Actions secrets and variables** > **Actions** > **New repository secret** tạo 1 repository secret với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add secret** để add access token
+Go to **Settings** > **Actions secrets and variables** > **Actions** > **New repository secret** create 1 repository secret with name `EXPO_TOKEN` and paste the expo account access token then select **Add secret** to add access token
 
 ### Gitlab
 
-Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_TOKEN` và paste access token của account expo vào sao đó chọn **Add variable** để add access token
+Go to **Settings** > **CI/CD** > **Variables** create 1 variable with name `EXPO_TOKEN` and paste the expo account access token then select **Add variable** to add access token
 
-**Lưu ý:**
+**Note:**
 
--   Sẽ chạy khi có merge request đc merge vào nhánh
--   CI chỉ hoạt động với nhánh `staging` và nhánh `develop`
--   Với nhánh `main` là môi trường `production` nên sẽ phải update bằng tay để đảm bảo an toàn
--   Để thêm nhánh hoặc sửa lại CI thì cần sửa lại file `.github/workflows/eas-update.yml` đối với github và file `.gitlab-ci.yml` đối với gitlab hoặc amela git
+-   Will run when there is a merge request merged into the branch
+-   CI only works with `staging` branch and `develop` branch
+-   With `main` branch being the `production` environment, you need to update manually to ensure safety
+-   To add branches or modify CI, you need to modify the `.github/workflows/eas-update.yml` file for github and `.gitlab-ci.yml` file for gitlab
 
 ## Dependencies
 
@@ -181,40 +181,40 @@ Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_
 -   [`tailwindcss`](https://tailwindcss.com/)
 -   [`jest-expo`](https://github.com/expo/expo/tree/main/packages/jest-expo/)
 
-## Công Nghệ Sử Dụng
+## Technologies Used
 
 ### Core Technologies
 
--   **React Native**: Phiên bản 0.76.3 - Framework để phát triển ứng dụng di động đa nền tảng
--   **Expo**: Phiên bản 52.0.11 - Bộ công cụ phát triển và triển khai React Native
--   **TypeScript**: Phiên bản 5.3.3 - Ngôn ngữ lập trình static type-checking dựa trên JavaScript
--   **Expo Router**: Phiên bản 3.1.0 - File-based routing cho ứng dụng Expo
+-   **React Native**: Version 0.76.3 - Framework for developing cross-platform mobile applications
+-   **Expo**: Version 52.0.11 - Development and deployment toolkit for React Native
+-   **TypeScript**: Version 5.3.3 - Static type-checking programming language based on JavaScript
+-   **Expo Router**: Version 3.1.0 - File-based routing for Expo applications
 
 ### State Management & Networking
 
--   **Zustand**: Quản lý state nhỏ gọn, nhanh chóng và mạnh mẽ
--   **React Query**: Quản lý, cache và đồng bộ hóa state từ server
+-   **Zustand**: Compact, fast and powerful state management
+-   **React Query**: Manage, cache and synchronize state from server
 
 ### UI & Styling
 
--   **NativeWind**: Dùng Tailwind CSS trong React Native
--   **Tailwind CSS**: Phiên bản 4.0.0 - Framework CSS tiện ích để tạo UI nhanh chóng
+-   **NativeWind**: Use Tailwind CSS in React Native
+-   **Tailwind CSS**: Version 4.0.0 - Utility CSS framework for rapid UI creation
 
 ### Form & Validation
 
--   **React Hook Form**: Quản lý form hiệu quả với ít render
--   **Yup**: Bộ xác thực giá trị và parse đối tượng
+-   **React Hook Form**: Efficient form management with minimal renders
+-   **Yup**: Value validation and object parsing library
 
 ### Notification & Services
 
--   **OneSignal**: Dịch vụ push notification đa nền tảng
--   **Expo Updates**: Over-the-air updates không cần phát hành app mới
--   **Expo Location**: Dịch vụ định vị địa lý
+-   **OneSignal**: Cross-platform push notification service
+-   **Expo Updates**: Over-the-air updates without releasing new app
+-   **Expo Location**: Geolocation service
 
 ### Testing
 
--   **Jest**: Framework testing cho JavaScript
--   **React Testing Library**: Thư viện testing cho React và React Native
+-   **Jest**: Testing framework for JavaScript
+-   **React Testing Library**: Testing library for React and React Native
 
 ## Directory Structure
 

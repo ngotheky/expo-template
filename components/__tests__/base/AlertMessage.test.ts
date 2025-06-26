@@ -73,12 +73,12 @@ describe('AlertMessage', () => {
             onPressOk,
         });
 
-        // Lấy ra hàm onPress từ tham số gọi Alert.alert
+        // Extract onPress function from Alert.alert call parameters
         const args = (Alert.alert as jest.Mock).mock.calls[0];
         const buttons = args[2];
         const confirmButton = buttons[0];
 
-        // Gọi hàm onPress
+        // Call onPress function
         confirmButton.onPress();
 
         expect(onPressOk).toHaveBeenCalled();

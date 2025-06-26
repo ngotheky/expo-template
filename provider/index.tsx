@@ -7,19 +7,20 @@ import * as SplashScreen from 'expo-splash-screen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { loadLocaleLanguage } from '@/utils/i18next';
 import { addMenuClearAsyncStorage } from '@/utils/helper';
-import { useColorScheme } from 'react-native';
-import useNotification from '@/hooks/useNotification';
+import useAppTheme from '@/store/useAppTheme';
+import { Appearance } from 'react-native';
+// import useNotification from '@/hooks/useNotification';
 
 const queryClient = new QueryClient();
 
 SplashScreen.preventAutoHideAsync();
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-    const colorScheme = useColorScheme();
+    const { theme } = useAppTheme();
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
-    useNotification();
+    // useNotification();
 
     useEffect(() => {
         if (loaded) {
@@ -30,6 +31,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         loadLocaleLanguage();
         addMenuClearAsyncStorage();
+        Appearance.setColorScheme(theme);
     }, []);
 
     if (!loaded) {
@@ -38,7 +40,13 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <ThemeProvider
+                value={
+                    theme === 'dark'
+                        ? { ...DarkTheme, colors: { ...DarkTheme.colors, background: '#1f1f1f' } }
+                        : DefaultTheme
+                }
+            >
                 <StatusBar style="auto" />
                 {children}
             </ThemeProvider>

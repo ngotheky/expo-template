@@ -1,5 +1,5 @@
 import i18next, { ParseKeys } from 'i18next';
-import { memo } from 'react';
+import { forwardRef, memo } from 'react';
 import isEqual from 'react-fast-compare';
 import { Text, TextProps, useColorScheme } from 'react-native';
 import classNames from 'classnames';
@@ -67,4 +67,5 @@ const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: S
  * @returns {JSX.Element} The rendered styled text component.
  *
  */
-export default memo(StyledText, isEqual);
+// Fix: wrap StyledText with forwardRef to match memo's expected signature
+export default memo(forwardRef(StyledText), isEqual);

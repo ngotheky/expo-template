@@ -13,6 +13,8 @@ export default {
         updateInstalled: 'インストールされました！',
     },
     common: {
+        language: '言語',
+        theme: 'テーマ',
         defaultLanguage: 'English',
         close: '閉じる',
         noText: 'テキストなし',
@@ -20,6 +22,7 @@ export default {
         cancel: 'キャンセル',
         confirm: '決定',
         reload: 'リロード',
+        back: '戻る',
         sendOTP: {
             title: '認証コード',
             titleForgotPassword: 'パスワードを忘れた',
@@ -48,12 +51,14 @@ export default {
     // screens
     tab: {
         home: 'ホーム',
+        message: 'メッセージ',
         notification: '通知',
         setting: '設定',
-        account: 'アカウント',
+        myPage: 'マイページ',
     },
-    authen: {
+    auth: {
         login: {
+            title: 'ログイン',
             placeholderEmail: 'メールアドレス',
             placeholderPassword: 'パスワード',
             buttonLogin: 'ログイン',
@@ -73,6 +78,10 @@ export default {
             cancel: 'キャンセル',
         },
         sendEmail: {
+            title: 'パスワードを忘れた',
+            sendButtonTitle: '次へ',
+        },
+        forgotPassword: {
             title: 'パスワードを忘れた',
             sendButtonTitle: '次へ',
         },

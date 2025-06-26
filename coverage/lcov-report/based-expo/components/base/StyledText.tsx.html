@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -158,21 +158,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,21 +228,21 @@ interface StyledTextWithI18nValue extends StyledTextProps {
 &nbsp;
 type StyledTextCombineProps = StyledTextWithOriginValue | StyledTextWithI18nValue;
 &nbsp;
-const StyledText = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> className, originValue, i18nText, i18nParams, ...rest }: StyledTextCombineProps, ref: any) =&gt; {</span>
-    const colorScheme = <span class="cstat-no" title="statement not covered" >useColorScheme();</span>
-    const { t } = <span class="cstat-no" title="statement not covered" >useTranslation();</span>
+const StyledText = ({ className, originValue, i18nText, i18nParams, ...rest }: StyledTextCombineProps, ref: any) =&gt; {
+    const colorScheme = useColorScheme();
+    const { t } = useTranslation();
 &nbsp;
     let value: string;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (originValue) {</span>
-<span class="cstat-no" title="statement not covered" >        value = originValue;</span>
-    } else <span class="cstat-no" title="statement not covered" >if (i18nText || i18next.exists(i18nText || '', i18nParams)) {</span>
-<span class="cstat-no" title="statement not covered" >        value = t(i18nText as I18Type, i18nParams);</span>
-    } else {
+    if (originValue) {
+        value = originValue;
+    } else if (i18nText || <span class="branch-1 cbranch-no" title="branch not covered" >i18next.exists(i18nText || '', i18nParams))</span> {
+        value = t(i18nText as I18Type, i18nParams);
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >        value = i18nText || '';</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;Text
             ref={ref}
             {...rest}
@@ -280,7 +280,7 @@ export default memo(StyledText, isEqual);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-26T03:03:20.584Z
+                at 2025-06-26T08:14:22.967Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { asyncStorage } from './configs';
-import { Language } from '@/utils/react-i18next';
+import { Language } from '@/utils/i18next';
 
 interface ILanguage {
     languageKey: Language;
@@ -13,7 +13,9 @@ const useLanguage = create<ILanguage>()(
         persist(
             set => ({
                 languageKey: 'jp',
-                updateLanguageKey: (languageKey: Language) => set({ languageKey }),
+                updateLanguageKey: (languageKey: Language) => {
+                    set({ languageKey });
+                },
             }),
             {
                 name: 'language',
