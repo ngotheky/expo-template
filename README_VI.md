@@ -149,7 +149,7 @@ Vào **Settings** > **CI/CD** > **Variables** tạo 1 variable với tên `EXPO_
 -   Sẽ chạy khi có merge request đc merge vào nhánh
 -   CI chỉ hoạt động với nhánh `staging` và nhánh `develop`
 -   Với nhánh `main` là môi trường `production` nên sẽ phải update bằng tay để đảm bảo an toàn
--   Để thêm nhánh hoặc sửa lại CI thì cần sửa lại file `.github/workflows/eas-update.yml` đối với github và file `.gitlab-ci.yml` đối với gitlab hoặc amela git
+-   Để thêm nhánh hoặc sửa lại CI thì cần sửa lại file `.github/workflows/eas-update.yml` đối với github và file `.gitlab-ci.yml` đối với gitlab
 
 ## Dependencies
 
