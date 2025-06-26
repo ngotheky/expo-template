@@ -36,7 +36,6 @@ export default function Home() {
                 <StyledText className="!text-primary" originValue="Select Date" />
             </StyledDateTimePicker>
             <StyledInput
-                className="bg-white"
                 label="common.noData"
                 placeholder={t('common.noText')}
                 renderRight={() => {
@@ -46,7 +45,7 @@ export default function Home() {
             <ImagePicker image={image} setImage={setImage}>
                 <MaterialIcons size={28} name="photo-library" color={'gray'} />
             </ImagePicker>
-            <View className="flex-1 w-full bg-gray-300">
+            <View className="flex-1 w-full">
                 <StyledList
                     data={data}
                     onRefresh={refetch}

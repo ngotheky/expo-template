@@ -13,6 +13,8 @@ export default {
         updateInstalled: 'インストールされました！',
     },
     common: {
+        language: '言語',
+        theme: 'テーマ',
         defaultLanguage: 'English',
         close: '閉じる',
         noText: 'テキストなし',
@@ -48,9 +50,10 @@ export default {
     // screens
     tab: {
         home: 'ホーム',
+        message: 'メッセージ',
         notification: '通知',
         setting: '設定',
-        account: 'アカウント',
+        myPage: 'マイページ',
     },
     authen: {
         login: {

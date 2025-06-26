@@ -7,7 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { loadLocaleLanguage } from '@/utils/i18next';
 import { addMenuClearAsyncStorage } from '@/utils/helper';
-import { useColorScheme } from 'react-native';
+import useAppTheme from '@/store/useAppTheme';
 // import useNotification from '@/hooks/useNotification';
 
 const queryClient = new QueryClient();
@@ -15,7 +15,7 @@ const queryClient = new QueryClient();
 SplashScreen.preventAutoHideAsync();
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-    const colorScheme = useColorScheme();
+    const { theme } = useAppTheme();
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
@@ -38,7 +38,13 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <ThemeProvider
+                value={
+                    theme === 'dark'
+                        ? { ...DarkTheme, colors: { ...DarkTheme.colors, background: '#1f1f1f' } }
+                        : DefaultTheme
+                }
+            >
                 <StatusBar style="auto" />
                 {children}
             </ThemeProvider>

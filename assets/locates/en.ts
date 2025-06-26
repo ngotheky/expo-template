@@ -13,6 +13,8 @@ export default {
         updateInstalled: 'Update installed',
     },
     common: {
+        language: 'Language',
+        theme: 'Theme',
         defaultLanguage: 'English',
         close: 'Close',
         noText: 'No text',
@@ -46,9 +48,10 @@ export default {
     // screens
     tab: {
         home: 'Home',
+        message: 'Message',
         notification: 'Notification',
+        myPage: 'My Page',
         setting: 'Setting',
-        account: 'Account',
     },
     authen: {
         login: {
